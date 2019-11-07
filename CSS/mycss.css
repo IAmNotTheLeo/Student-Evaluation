@@ -1,0 +1,125 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	text-align: center;
+	background-image: linear-gradient(150deg, #ffffff 25%, #f8f7fb, #eeeff8, #e5e7f5, 
+		#dae0f2, #cbd6f2, #bcccf1, #acc2f1, #98b1f2, #87a0f2, #798df1, #6f7aee);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#Logo{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: -30px;
+  	height: 35px;
+  	width: 35px;
+}
+
+#second-header{
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: left;
+	background-color: #333435;
+	padding: 6px;
+	color: #FFFF;
+}
+
+#navigationButton{
+	font-size: 25px;
+	cursor: pointer;
+	margin: 10px;
+}
+
+#contentLogin{
+	border-radius: 10px;
+	padding-top: 25px;
+	padding-left: 75px;
+	padding-right: 75px;
+	padding-bottom: 60px;
+	margin-top: 95px;
+	background: #FFFF;
+	border-color: #000000;
+ 	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
+}
+
+#contentRegister{
+	border-radius: 10px;
+	padding-top: 25px;
+	padding-left: 75px;
+	padding-right: 75px;
+	padding-bottom: 60px;
+	margin-top: 75px;
+	background: #ffff;
+	border-color: #000000;
+ 	display: inline-block;
+ 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
+}
+
+#contentStudent{
+	border-radius: 10px;
+	padding-top: 25px;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-bottom: 60px;
+	margin-top: 75px;
+	background: #ffff;
+	border-color: #000000;
+ 	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
+}
+
+.loginInput{
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid #808080;
+	text-align: left;
+	font-size: 15px;
+}
+
+.registerInput{
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid #808080;
+	text-align: left;
+	font-size: 15px;
+}
+
+#generateCAPTCHA{
+	color: #000000;
+	text-align: center;
+  font-family: Fascinate Inline;
+  font-style: italic;
+	font-size: 30px;
+	border: 2px solid;
+	width: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.linkWeb:hover{
+	color: #316ed8;
+}
+
+.linkWeb{
+	color: #606060;
+	font-size: 15px;
+}
+
+textarea{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
+	border-width: 1px;
+	border-color: #B0B0B0;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	outline: 0;
+	resize: none;
+}

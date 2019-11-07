@@ -1,0 +1,79 @@
+.buttonDesign {
+color: #FFFF !important;
+border-radius: 10px;
+text-transform: uppercase;
+text-decoration: none;
+background: #033657;
+padding: 10px;
+border: 3px solid #033657 !important;
+display: inline-block;
+transition: all 0.4s ease 0s;
+cursor: pointer;
+}
+
+.buttonDesign:hover {
+color: #FFFF !important;
+background: #0a6cab;
+border-color: #0a6cab !important;
+transition: all 0.4s ease 0s;
+outline: none;
+box-shadow: 0px 3px 7px  #888888;
+}
+
+.buttonDesignTwo {
+width: 0.1px;
+height: 0.1px;
+opacity: 0;
+overflow: hidden;
+position: absolute;
+z-index: -1;
+}
+
+.buttonDesignTwo + label {
+color: #FFFF !important;
+border-radius: 10px;
+text-transform: uppercase;
+font-size: 11px;
+text-decoration: none;
+background: #033657;
+padding: 5px;
+border: 3px solid #033657 !important;
+display: inline-block;
+transition: all 0.4s ease 0s;
+cursor: pointer;
+}
+
+.buttonDesignTwo:focus + label,
+.buttonDesignTwo + label:hover {
+color: #FFFF !important;
+background: #0a6cab;
+border-color: #0a6cab !important;
+transition: all 0.4s ease 0s;
+outline: none;
+box-shadow: 0px 3px 7px  #888888;
+}
+
+.buttonUpload {
+color: #FFFF !important;
+border-radius: 10px;
+text-transform: uppercase;
+font-size: 11px;
+text-decoration: none;
+background: #B22222;
+padding: 5px;
+border: 3px solid #B22222 !important;
+display: inline-block;
+transition: all 0.4s ease 0s;
+cursor: pointer;
+}
+
+.buttonUpload:hover {
+color: #FFFF !important;
+background: #78AB46;
+border-color: #78AB46 !important;
+transition: all 0.4s ease 0s;
+outline: none;
+box-shadow: 0px 3px 7px  #888888;
+}
+
+
