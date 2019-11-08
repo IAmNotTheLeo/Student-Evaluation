@@ -20,19 +20,17 @@ if (isset($_POST['regSubmit'])) {
 
 
   if (mysqli_num_rows($resultExist)) {
-   header("Location: AccountExist.php");
- }
+    $msg = "<script>Swal.fire({type: 'error',title: 'Student ID or Email Already Exists',text: 'Please Enter An Nonexistent Account',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
+  }
 
- else if (mysqli_num_rows($resultLimit) === 3) {
-   header("location: GroupLimit.php");
- }
- 
-else {
+  else if (mysqli_num_rows($resultLimit) === 3) {
+    $msg = "<script>Swal.fire({type: 'error',title: 'Group Full',text: 'Please Select Another Group that is Available',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
+  }
+
+  else {
         $queryRegister = "INSERT INTO UserTable (UserID, UserEmail, UserPassword, UserGroup, UserLevel) VALUES ('$studentID','$studentEmail','$studentPassword','$studentGroup','$studentLevel')";
         mysqli_query($connect, $queryRegister);
-        header("Location: AccountCreated.php");
+        $msg = "<script>Swal.fire({type: 'success',title: 'Acccount Created',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'Login.php';}})</script>";
   }
 }
-
-
 ?>

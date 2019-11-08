@@ -7,7 +7,7 @@ if (isset($_POST['stuRate'])) {
 
 
   if (mysqli_num_rows($resultDoneEva) === 1) {
-    header("location: EvaluationDone.php");
+    $msg = "<script>Swal.fire({type: 'error',title: 'Already Evaluated Student',text: 'Please Select Another Student to Evaluate',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
   }
 else if (isset($_POST['groupMembersDropDown'])) {
     $_SESSION['ToStudent'] = $_POST['groupMembersDropDown'];

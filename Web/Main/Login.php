@@ -43,6 +43,11 @@ include('../../PHP/LoginSystem.php');
 <a class="linkWeb" href="Register.php">Haven't Registered?</a>
 <br />
 <br />
+<?php
+if (isset($_POST['Logsubmit'])) {
+  echo $msg;
+}
+?>
 <button class="buttonDesign" type="submit" name="Logsubmit">Login</button>
 </form>
 </div>

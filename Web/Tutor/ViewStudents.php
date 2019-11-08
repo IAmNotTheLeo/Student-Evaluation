@@ -1,7 +1,8 @@
-<?php  
+<?php 
 
 session_start();
 
+require '../../PHP/StuGroup.php';
 require '../../PHP/UserSession.php';
 
 ?>
@@ -16,6 +17,7 @@ require '../../PHP/UserSession.php';
     <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">
     <script src="../../JavaScript/navigation.js"></script>
     <script src="../../JavaScript/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../CSS/pagination.css">
   </head>
   <body>
     <div id="second-header">
@@ -26,32 +28,19 @@ require '../../PHP/UserSession.php';
              </div>
 </div>
   <span id="navigationButton" onclick="openNav()">☰</span>
-  <img id="Logo" src="../../Images/Logo.png">
+    <img id="Logo" src="../../Images/Logo.png">
 </div>
 <div id="contentTutor">
-<h1>Tutor</h1>
-<form method="POST" action="ViewStudents.php">
-  <select name="ViewGroupStudent" style="width: 250px;">
-      <option value="1">Group 1</option>
-      <option value="2">Group 2</option>
-      <option value="3">Group 3</option>
-      <option value="4">Group 4</option>
-      <option value="5">Group 5</option>
-      <option value="6">Group 6</option>
-      <option value="7">Group 7</option>
-      <option value="8">Group 8</option>
-      <option value="9">Group 9</option>
-      <option value="10">Group 10</option>
-    </select>
+<h1>Students</h1>
+<h3><?php echo "Group " . $studentGroup ?></h3>
+  <select>
+  <?php while ($row = mysqli_fetch_array($resultViewGroup)) { ?>
+      <option><?php echo $row['UserID']; ?></option>
+  <?php } ?>
+  </select>
 <br />
 <br />
-<br />
-<button class="buttonDesign" type="submit" name="tuGroupView">View Student</button>
-</form>
-<br />
-<form method="POST" action="SearchStudent.php">
-<button class="buttonDesign" type="submit" name="tuSearchView">Search Student</button>  
-</form>
+  <br />
 </div>
   </body>
 </html>

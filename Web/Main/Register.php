@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 include('../../PHP/RegisterSystem.php');
 
 ?>
@@ -69,9 +67,12 @@ include('../../PHP/RegisterSystem.php');
     </select>
     <br />
     <br />
-    <div>
+    <?php
+    if (isset($_POST['regSubmit'])) {
+      echo $msg;
+    }
+    ?>
     <button class="buttonDesign" type="submit" value="Create Account" name="regSubmit" >Submit</button>
-  </div>
   </form>
 </div>
   </body>

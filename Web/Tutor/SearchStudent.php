@@ -1,17 +1,8 @@
-<?php 
-
-session_start();
-
-require '../../PHP/StuGroup.php';
-require '../../PHP/UserSession.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Tutor</title>
+    <title>Search</title>
     <link rel="stylesheet" type="text/css" href="../../CSS/mycss.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">
@@ -28,19 +19,16 @@ require '../../PHP/UserSession.php';
              </div>
 </div>
   <span id="navigationButton" onclick="openNav()">☰</span>
-    <img id="Logo" src="../../Images/Logo.png">
+  <img id="Logo" src="../../Images/Logo.png">
 </div>
-<div id="contentStudent">
-<h1>Students</h1>
-<h3><?php echo "Group " . $studentGroup ?></h3>
-  <select>
-  <?php while ($row = mysqli_fetch_array($resultViewGroup)) { ?>
-      <option><?php echo $row['UserID']; ?></option>
-  <?php } ?>
-  </select>
-<br />
-<br />
-  <br />
+<div id="contentTutor">
+<div class="pagination">
+  <a href="">1</a>
+  <a href="">2</a>
+  <a href="">3</a>
+  <a href="">4</a>
+
+</div>
 </div>
   </body>
 </html>

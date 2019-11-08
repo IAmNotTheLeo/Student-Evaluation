@@ -55,9 +55,14 @@ require '../../PHP/UserSession.php';
   <textarea cols="30" rows="10" name="StuCommnet" placeholder="Evaluation" required></textarea>
   <br />
   <br />
-  <input type="file" name="uploadImage" id="file" class="buttonDesignTwo" accept="image/*" />
+  <input type="file" name="uploadImage" id="file" class="buttonDesignTwo" accept="image/*"/>
   <label for="file">Choose an Image file</label>
 <br />
+<?php 
+if (isset($_POST['stuUpload'])) {
+  echo $msg;
+}
+?>
 <br />
 <button class="buttonUpload" type="submit" name="stuUpload">Submit</button>
 

@@ -1,5 +1,4 @@
 <?php 
-
 session_start();
 
 require '../../PHP/ShowGroupMembers.php';
@@ -7,7 +6,6 @@ require '../../PHP/UserSession.php';
 require '../../PHP/RateSystem.php';
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -18,6 +16,8 @@ require '../../PHP/RateSystem.php';
     <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">
     <script src="../../JavaScript/navigation.js"></script>
     <script src="../../JavaScript/script.js"></script>
+    <script src="../../JavaScript/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../../CSS/sweetalert2.min.css">
     <script>
     </script>
   </head>
@@ -50,6 +50,11 @@ Group Members
 <br />
 <br />
 <br />
+<?php  
+if (isset($_POST['stuRate'])) {
+  echo $msg;
+}
+?>
 <button class="buttonDesign" type="submit" name="stuRate">Rate Student</button>
 </form>
 </div>

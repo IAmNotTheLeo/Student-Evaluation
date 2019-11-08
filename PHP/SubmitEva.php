@@ -12,9 +12,25 @@ if (isset($_POST['stuUpload'])) {
 	$stuEvaImage = $_FILES['uploadImage']['tmp_name'];
 
 	$queryEva = "INSERT INTO Evaluation (Grade, EComment, Image, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuEvaImage', '$stuToStudent', '$stuFromStudent')";
-	mysqli_query($connect, $queryEva);
-	header("location: RateStudent.php");
 
+	$msg = "<script>Swal.fire({type: 'success',title: 'Evaluation Complete',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'RateStudent.php';}})</script>";
+
+
+	if (!($_FILES['uploadImage']['type'])) {
+		mysqli_query($connect, $queryEva);
+		$msg;
+	}
+
+	else if (!preg_match('/gif|png|x-png|jpeg|jpg/', $_FILES['uploadImage']['type'])) {
+		$msg = "<script>Swal.fire({type: 'error',title: 'Incompatible Image',text: 'Please Select A Compatible Image',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
+
+	} else if ($_FILES['uploadImage']['size'] > 400000){
+		$msg = "<script>Swal.fire({type: 'error',title: 'File Too Large',text: 'Please Select A Reasonable File Size',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
+
+	} else {
+		mysqli_query($connect, $queryEva);
+		$msg;
+	}
 }
 
 ?>
