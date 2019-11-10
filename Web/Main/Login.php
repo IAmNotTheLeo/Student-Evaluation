@@ -36,11 +36,13 @@ include('../../PHP/LoginSystem.php');
 <input class="loginInput" type="text" placeholder="ID" maxlength="9" onkeypress="return onlyNumber(event)" name="IDLogin" required>
 <br />
 <br />
-<br />
 <input class="loginInput" type="password" placeholder="Password" name="PasswordLogin" required>
 <br />
 <br />
 <a class="linkWeb" href="Register.php">Haven't Registered?</a>
+<br />
+<br />
+<input type="checkbox" name="rememberMeUser">  Remember Me
 <br />
 <br />
 <?php

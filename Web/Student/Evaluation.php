@@ -3,6 +3,8 @@ session_start();
 
 require '../../PHP/SubmitEva.php';
 require '../../PHP/UserSession.php';
+require '../../PHP/SaveLater.php';
+require '../../PHP/ShowSavedData.php';
 
 ?>
 
@@ -52,11 +54,12 @@ require '../../PHP/UserSession.php';
   Evaluation:
   <br />
   <br />
-  <textarea cols="30" rows="10" name="StuCommnet" placeholder="Evaluation" required></textarea>
+  <textarea cols="30" rows="10" name="StuComment" placeholder="Evaluation" required><?php while ($rows = mysqli_fetch_array($resultSaved)){echo($rows['SaveComment']);}?>
+</textarea>
   <br />
   <br />
-  <input type="file" name="uploadImage" id="file" class="buttonDesignTwo" accept="image/*"/>
-  <label for="file">Choose an Image file</label>
+  <input type="file" name="uploadImage" id="buttonFileUpload" class="btnChoose" accept="image/*"/ placeholder="Upload Image">
+  <label for="buttonFileUpload" class="btnLabel">Upload Image</label>
 <br />
 <?php 
 if (isset($_POST['stuUpload'])) {
@@ -64,8 +67,10 @@ if (isset($_POST['stuUpload'])) {
 }
 ?>
 <br />
+<button class="buttonSaveLater" type="submit" name="stuSaveLater">Save for Later</button>
+<br />
+<br />
 <button class="buttonUpload" type="submit" name="stuUpload">Submit</button>
-
 </form>
 </div>
   </body>

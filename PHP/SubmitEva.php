@@ -1,6 +1,5 @@
 <?php 
 
-
 //require '/home/lc8884l/include/connection.php';
 require "../../PHP/connection.php";
 
@@ -8,7 +7,7 @@ if (isset($_POST['stuUpload'])) {
 	$stuFromStudent = $_SESSION['UserIDLogin'];
 	$stuToStudent = $_SESSION['ToStudent'];
 	$stuEvaGrade = $_POST['StuGrade'];
-	$stuEvaComment = $_POST['StuCommnet'];
+	$stuEvaComment = $_POST['StuComment'];
 	$stuEvaImage = $_FILES['uploadImage']['tmp_name'];
 
 	$queryEva = "INSERT INTO Evaluation (Grade, EComment, Image, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuEvaImage', '$stuToStudent', '$stuFromStudent')";
@@ -24,13 +23,14 @@ if (isset($_POST['stuUpload'])) {
 	else if (!preg_match('/gif|png|x-png|jpeg|jpg/', $_FILES['uploadImage']['type'])) {
 		$msg = "<script>Swal.fire({type: 'error',title: 'Incompatible Image',text: 'Please Select A Compatible Image',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
 
-	} else if ($_FILES['uploadImage']['size'] > 400000){
+	} else if ($_FILES['uploadImage']['size'] > 160000){
 		$msg = "<script>Swal.fire({type: 'error',title: 'File Too Large',text: 'Please Select A Reasonable File Size',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
 
 	} else {
 		mysqli_query($connect, $queryEva);
 		$msg;
 	}
+
 }
 
 ?>

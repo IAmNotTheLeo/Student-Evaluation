@@ -20,7 +20,7 @@ outline: none;
 box-shadow: 0px 3px 7px  #888888;
 }
 
-.buttonDesignTwo {
+.btnChoose {
 width: 0.1px;
 height: 0.1px;
 opacity: 0;
@@ -29,7 +29,7 @@ position: absolute;
 z-index: -1;
 }
 
-.buttonDesignTwo + label {
+.btnChoose + .btnLabel {
 color: #FFFF !important;
 border-radius: 10px;
 text-transform: uppercase;
@@ -43,8 +43,8 @@ transition: all 0.4s ease 0s;
 cursor: pointer;
 }
 
-.buttonDesignTwo:focus + label,
-.buttonDesignTwo + label:hover {
+.btnChoose:focus + .btnLabel,
+.btnChoose + .btnLabel:hover {
 color: #FFFF !important;
 background: #0a6cab;
 border-color: #0a6cab !important;
@@ -52,6 +52,8 @@ transition: all 0.4s ease 0s;
 outline: none;
 box-shadow: 0px 3px 7px  #888888;
 }
+
+
 
 .buttonUpload {
 color: #FFFF !important;
@@ -68,6 +70,30 @@ cursor: pointer;
 }
 
 .buttonUpload:hover {
+color: #FFFF !important;
+background: #78AB46;
+border-color: #78AB46 !important;
+transition: all 0.4s ease 0s;
+outline: none;
+box-shadow: 0px 3px 7px  #888888;
+
+}
+
+.buttonSaveLater {
+color: #FFFF !important;
+border-radius: 10px;
+text-transform: uppercase;
+font-size: 11px;
+text-decoration: none;
+background: #78AB46;
+padding: 5px;
+border: 3px solid #78AB46 !important;
+display: inline-block;
+transition: all 0.4s ease 0s;
+cursor: pointer;
+}
+
+.buttonSaveLater:hover {
 color: #FFFF !important;
 background: #78AB46;
 border-color: #78AB46 !important;
