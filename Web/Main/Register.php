@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../PHP/RegisterSystem.php');
+require '../../PHP/RegisterSystem.php';
 
 ?>
 <!DOCTYPE html>
@@ -72,7 +72,7 @@ include('../../PHP/RegisterSystem.php');
       echo $msg;
     }
     ?>
-    <button class="buttonDesign" type="submit" value="Create Account" name="regSubmit" >Submit</button>
+    <button class="buttonDesign" type="submit" value="Create Account" name="regSubmit">Create Account</button>
   </form>
 </div>
   </body>

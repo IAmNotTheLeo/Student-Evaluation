@@ -8,6 +8,6 @@ require "../../PHP/connection.php";
 
 
 	$querySaved = "SELECT SaveComment FROM SaveComment WHERE EvaluationFrom ='$savedStuFrom' AND EvaluationTo ='$savedStuTo'";
-	$resultSaved = mysqli_query($connect, $querySaved);
+	$resultSaved = $connect->query($querySaved);
 
 ?>

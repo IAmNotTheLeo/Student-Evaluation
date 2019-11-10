@@ -9,7 +9,7 @@ require "../../PHP/connection.php";
 	$dropDown = $_SESSION['UserIDLogin'];
 
 	$queryGroupM = "SELECT * FROM UserTable WHERE NOT UserID ='$dropDown' AND UserLevel ='$studentOnly' AND UserGroup ='$groupNumber'";
-	$resultGroup = mysqli_query($connect, $queryGroupM);
+	$resultGroup = $connect->query($queryGroupM);
 
 
  ?>

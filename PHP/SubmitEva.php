@@ -12,11 +12,14 @@ if (isset($_POST['stuUpload'])) {
 
 	$queryEva = "INSERT INTO Evaluation (Grade, EComment, Image, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuEvaImage', '$stuToStudent', '$stuFromStudent')";
 
+	$queryDeleteSave = "DELETE FROM SaveComment WHERE EvaluationFrom ='$stuFromStudent' AND EvaluationTo ='$stuToStudent'";
+
 	$msg = "<script>Swal.fire({type: 'success',title: 'Evaluation Complete',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'RateStudent.php';}})</script>";
 
 
 	if (!($_FILES['uploadImage']['type'])) {
-		mysqli_query($connect, $queryEva);
+		$connect->query($queryEva);
+		$connect->query($queryDeleteSave);
 		$msg;
 	}
 
@@ -27,7 +30,8 @@ if (isset($_POST['stuUpload'])) {
 		$msg = "<script>Swal.fire({type: 'error',title: 'File Too Large',text: 'Please Select A Reasonable File Size',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
 
 	} else {
-		mysqli_query($connect, $queryEva);
+		$connect->query($queryEva);
+		$connect->query($queryDeleteSave);
 		$msg;
 	}
 

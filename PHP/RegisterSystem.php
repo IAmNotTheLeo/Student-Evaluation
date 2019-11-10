@@ -13,23 +13,24 @@ if (isset($_POST['regSubmit'])) {
   $studentLevel = "Student";
 
   $queryExist = "SELECT UserID, UserEmail FROM UserTable WHERE UserID = '$studentID' OR UserEmail = '$studentEmail'";
-  $resultExist = mysqli_query($connect, $queryExist);
+  $resultExist = $connect->query($queryExist);
+
 
   $queryLimit = "SELECT * FROM UserTable WHERE UserGroup = '$studentGroup'";
-  $resultLimit = mysqli_query($connect, $queryLimit);
+  $resultLimit = $connect->query($queryLimit);
 
 
-  if (mysqli_num_rows($resultExist)) {
+  if ($resultExist->num_rows > 0) {
     $msg = "<script>Swal.fire({type: 'error',title: 'Student ID or Email Already Exists',text: 'Please Enter An Nonexistent Account',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
   }
 
-  else if (mysqli_num_rows($resultLimit) === 3) {
+  else if ($resultLimit->num_rows === 3) {
     $msg = "<script>Swal.fire({type: 'error',title: 'Group Full',text: 'Please Select Another Group that is Available',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
   }
 
   else {
         $queryRegister = "INSERT INTO UserTable (UserID, UserEmail, UserPassword, UserGroup, UserLevel) VALUES ('$studentID','$studentEmail','$studentPassword','$studentGroup','$studentLevel')";
-        mysqli_query($connect, $queryRegister);
+        $connect->query($queryRegister);
         $msg = "<script>Swal.fire({type: 'success',title: 'Acccount Created',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'Login.php';}})</script>";
   }
 }

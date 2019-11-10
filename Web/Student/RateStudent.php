@@ -43,7 +43,7 @@ Group Members
 <br />
 <form method="POST">
 <select name="groupMembersDropDown" style="width: 150px;" required="">
-<?php while ($row = mysqli_fetch_array($resultGroup)) { ?>
+<?php while ($row = $resultGroup->fetch_array()) { ?>
 <option><?php echo $row['UserID']; ?></option>
 <?php } ?>
 </select>

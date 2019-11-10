@@ -34,6 +34,9 @@ require '../../PHP/ShowSavedData.php';
 </div>
 <div id="contentStudent">
 <form method="POST" action="Evaluation.php" enctype="multipart/form-data">
+  Evaluating: <b><?php echo $_SESSION['ToStudent']; ?></b>
+  <br />
+  <br />
   Grade:
   <br />
   <br />
@@ -62,7 +65,7 @@ require '../../PHP/ShowSavedData.php';
   <label for="buttonFileUpload" class="btnLabel">Upload Image</label>
 <br />
 <?php 
-if (isset($_POST['stuUpload'])) {
+if (isset($_POST['stuUpload']) || isset($_POST['stuSaveLater'])) {
   echo $msg;
 }
 ?>

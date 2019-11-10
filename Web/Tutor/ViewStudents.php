@@ -1,5 +1,4 @@
 <?php 
-
 session_start();
 
 require '../../PHP/StuGroup.php';
@@ -34,7 +33,7 @@ require '../../PHP/UserSession.php';
 <h1>Students</h1>
 <h3><?php echo "Group " . $studentGroup ?></h3>
   <select>
-  <?php while ($row = mysqli_fetch_array($resultViewGroup)) { ?>
+  <?php while ($row = $resultViewGroup->fetch_array()) { ?>
       <option><?php echo $row['UserID']; ?></option>
   <?php } ?>
   </select>

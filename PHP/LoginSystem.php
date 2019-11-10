@@ -2,17 +2,16 @@
 
 //require '/home/lc8884l/include/connection.php';
 require "../../PHP/connection.php";
-
 if (isset($_POST['Logsubmit'])) {
   $ID_L = $_POST['IDLogin'];
   $Password_L = md5($_POST['PasswordLogin']);
 
   $queryLogin = "SELECT * FROM UserTable WHERE UserID = '$ID_L' AND UserPassword = '$Password_L' LIMIT 1";
-  $resultLogin = mysqli_query($connect, $queryLogin);
+  $resultLogin = $connect->query($queryLogin);
  
-  if (mysqli_num_rows($resultLogin) > 0) {
+  if ($resultLogin->num_rows > 0) {
 
-    while ($row = mysqli_fetch_assoc($resultLogin)) {
+    while ($row = $resultLogin->fetch_assoc()) {
 
       if($row['UserLevel'] == "Tutor") {
         $_SESSION['UserSession'] = $row['UserLevel'];
@@ -23,6 +22,10 @@ if (isset($_POST['Logsubmit'])) {
         $_SESSION['UserIDLogin'] = $row['UserID'];
         $_SESSION['UserGroupNum'] = $row['UserGroup'];
         header("location: ../Student/RateStudent.php");
+      }
+
+      if (isset($_POST['rememberMeUser'])) {
+        setcookie("IDLogin", $ID_L, time() + 86400);
       }
     }
   }
