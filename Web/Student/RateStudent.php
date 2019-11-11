@@ -1,9 +1,9 @@
 <?php 
 session_start();
 
-require '../../PHP/ShowGroupMembers.php';
+require '../../PHP/Student/ShowGroupMembers.php';
 require '../../PHP/UserSession.php';
-require '../../PHP/RateSystem.php';
+require '../../PHP/Student/RateSystem.php';
 
 ?>
 <!DOCTYPE html>

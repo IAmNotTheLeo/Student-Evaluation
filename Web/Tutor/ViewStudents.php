@@ -1,7 +1,7 @@
 <?php 
 session_start();
-
-require '../../PHP/StuGroup.php';
+require '../../PHP/Tutor/StudentsViews.php';
+require '../../PHP/Tutor/ShowStudent.php';
 require '../../PHP/UserSession.php';
 
 ?>
@@ -32,14 +32,34 @@ require '../../PHP/UserSession.php';
 <div id="contentTutor">
 <h1>Students</h1>
 <h3><?php echo "Group " . $studentGroup ?></h3>
-  <select>
+<form method="POST">
+  <select name="studentDisplay">
   <?php while ($row = $resultViewGroup->fetch_array()) { ?>
       <option><?php echo $row['UserID']; ?></option>
   <?php } ?>
   </select>
-<br />
-<br />
   <br />
+  <br />
+    <input type="submit" name="showSelectStudent" value="Show Student">
+</form>
+<br />
+<br />
+
+<div id="StudentEva">
+<?php 
+while ($row = $resultDetails->fetch_array()) {
+
+  
+  echo "<i>From: </i>" . $row['EvaluationFrom'] . "<br />" . "<i>To: </i>" . $row['EvaluationTo'] . "<br /> <br />";
+  echo "<b>Grade: </b>" . $row['Grade'] . "<br />" . "<br />";
+  echo "<b>Evaluation: </b>" . "<br />" . $row['EComment'] . "<br />" . "<br />";
+  echo "Image";
+  echo "<hr />";
+}
+?>
+
+</div>
+</div>
 </div>
   </body>
 </html>

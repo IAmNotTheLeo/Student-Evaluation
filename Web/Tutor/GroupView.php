@@ -1,6 +1,7 @@
 <?php  
 session_start();
 require '../../PHP/UserSession.php';
+require '../../PHP/Tutor/ViewGroup.php';
 
 ?>
 
@@ -28,7 +29,7 @@ require '../../PHP/UserSession.php';
 </div>
 <div id="contentTutor">
 <h1>Tutor</h1>
-<form method="POST" action="ViewStudents.php">
+<form method="POST">
   <select name="ViewGroupStudent" style="width: 250px;">
       <option value="1">Group 1</option>
       <option value="2">Group 2</option>

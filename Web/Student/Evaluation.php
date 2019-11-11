@@ -1,10 +1,9 @@
 <?php  
 session_start();
-
-require '../../PHP/SubmitEva.php';
+require '../../PHP/Student/SubmitEva.php';
 require '../../PHP/UserSession.php';
-require '../../PHP/SaveLater.php';
-require '../../PHP/ShowSavedData.php';
+require '../../PHP/Student/SaveLater.php';
+require '../../PHP/Student/ShowSavedData.php';
 
 ?>
 

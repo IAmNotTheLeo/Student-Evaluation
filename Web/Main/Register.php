@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../PHP/RegisterSystem.php';
+require '../../PHP/Main/RegisterSystem.php';
 
 ?>
 <!DOCTYPE html>

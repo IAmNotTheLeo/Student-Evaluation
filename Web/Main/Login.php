@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../PHP/LoginSystem.php';
+require '../../PHP/Main/LoginSystem.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
