@@ -44,19 +44,23 @@ require '../../PHP/UserSession.php';
 </form>
 <br />
 <br />
-
 <div id="StudentEva">
-<?php 
+<?php
+  if (isset($_POST['showSelectStudent'])) {
 while ($row = $resultDetails->fetch_array()) {
-
-  
   echo "<i>From: </i>" . $row['EvaluationFrom'] . "<br />" . "<i>To: </i>" . $row['EvaluationTo'] . "<br /> <br />";
   echo "<b>Grade: </b>" . $row['Grade'] . "<br />" . "<br />";
   echo "<b>Evaluation: </b>" . "<br />" . $row['EComment'] . "<br />" . "<br />";
-  echo "Image";
+  //echo "<img src='data:image;base64,".base64_encode($row['StudentImage'])."' />";
+  //echo "<img src='ShowImage.php?ID=" .($row['ID']). "' />";
+  echo "<br /><br />";
   echo "<hr />";
+  }
+} else {
+  echo "<div style='text-align: center; vertical-align: middle; line-height: 175px; '>Select Student to Details</div>";
 }
 ?>
+
 
 </div>
 </div>

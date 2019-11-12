@@ -9,8 +9,9 @@ if (isset($_POST['stuUpload'])) {
 	$stuEvaGrade = $_POST['StuGrade'];
 	$stuEvaComment = $_POST['StuComment'];
 	$stuEvaImage = $_FILES['uploadImage']['tmp_name'];
+	$stuEvaType = $_FILES['uploadImage']['type'];
 
-	$queryEva = "INSERT INTO Evaluation (Grade, EComment, Image, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuEvaImage', '$stuToStudent', '$stuFromStudent')";
+	$queryEva = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuEvaImage', '$stuEvaType','$stuToStudent', '$stuFromStudent')";
 
 	$queryDeleteSave = "DELETE FROM SaveComment WHERE EvaluationFrom ='$stuFromStudent' AND EvaluationTo ='$stuToStudent'";
 
