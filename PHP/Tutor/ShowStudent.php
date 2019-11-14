@@ -15,7 +15,7 @@ while ($row = $resultDetails->fetch_array()) {
   echo "<b>Grade: </b>" . $row['Grade'] . "<br />" . "<br />";
   echo "<b>Evaluation: </b>" . "<br />" . $row['EComment'] . "<br />" . "<br />";
   echo "<img width='100' height='100' src='data:" . $row['ImageType'] . ";base64,".base64_encode($row['StudentImage'])."' />";
-  echo "<img width='100' height='100' src='ShowImage.php?EvaluationFrom=" .($row['EvaluationFrom']). "' />";
+  echo "<img width='100' height='100' src='ShowImage.php?EvaluationFrom=" . ($row['EvaluationFrom']) . "' />";
   echo "<br /><br />";
   echo "<hr />";
   }

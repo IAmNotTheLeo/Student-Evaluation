@@ -6,17 +6,17 @@ require "../../PHP/connection.php";
 
 if (isset($_POST['regSubmit'])) {
 
-  $studentID = $_POST['stuID'];
-  $studentEmail = $_POST['stuEmail'];
-  $studentPassword = md5($_POST['stuPassoword']);
-  $studentGroup = $_POST['groupDropDown'];
+  $studentID = mysqli_real_escape_string($connect, $_POST['stuID']);
+  $studentEmail = mysqli_real_escape_string($connect,$_POST['stuEmail']);
+  $studentPassword = mysqli_real_escape_string($connect ,md5($_POST['stuPassoword']));
+  $studentGroup = mysqli_real_escape_string($connect,$_POST['groupDropDown']);
   $studentLevel = "Student";
 
-  $queryExist = "SELECT UserID, UserEmail FROM UserTable WHERE UserID = '$studentID' OR UserEmail = '$studentEmail'";
+  $queryExist = "SELECT UserID, UserEmail FROM UserTable WHERE UserID = " . $studentID . " OR UserEmail = " . $studentEmail . "";
   $resultExist = $connect->query($queryExist);
 
 
-  $queryLimit = "SELECT * FROM UserTable WHERE UserGroup = '$studentGroup'";
+  $queryLimit = "SELECT * FROM UserTable WHERE UserGroup = " . $studentGroup . "";
   $resultLimit = $connect->query($queryLimit);
 
 
@@ -29,7 +29,7 @@ if (isset($_POST['regSubmit'])) {
   }
 
   else {
-        $queryRegister = "INSERT INTO UserTable (UserID, UserEmail, UserPassword, UserGroup, UserLevel) VALUES ('$studentID','$studentEmail','$studentPassword','$studentGroup','$studentLevel')";
+        $queryRegister = "INSERT INTO UserTable (UserID, UserEmail, UserPassword, UserGroup, UserLevel) VALUES ('" . $studentID . "','" . $studentEmail . "','" . $studentPassword . "','" . $studentGroup . "','" . $studentLevel . "')";
         $connect->query($queryRegister);
         $msg = "<script>Swal.fire({type: 'success',title: 'Acccount Created',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'Login.php';}})</script>";
   }

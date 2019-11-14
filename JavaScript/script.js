@@ -19,8 +19,6 @@ function checkPassword() {
 
 function iDLimit(){
   var p = document.getElementById("firstInput").value;
-
-
   if (p.length !== 9) {
 
     Swal.fire({
@@ -65,11 +63,12 @@ var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function generateCaptcha() {
     var num1 = Math.floor((Math.random() * 10));
+    var letter1 = chars.substr(Math.floor(Math.random() * 25), 2);
     var num2 = Math.floor((Math.random() * 10));
-    var letter = chars.substr(Math.floor(Math.random() * 25), 2);
-    var num4 = Math.floor((Math.random() * 10));
+    var letter2 = chars.substr(Math.floor(Math.random() * 25), 2);
+    var num3 = Math.floor((Math.random() * 10));
 
-  captcha = num1.toString() + num2.toString() + letter.toString() +num4.toString();
+  captcha = num1.toString() + letter1 + num2.toString() + letter2 + num3.toString();
 
     document.getElementById("generateCAPTCHA").value = captcha;
 }
@@ -94,8 +93,19 @@ function checkCaptcha(){
 
 ///////////////////////////////////////////////////////
 
-
-function fileImageChoose(){
-
-
+function validEmail(email) {
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if (reg.test(email)) {
+      return true;
+    } else {
+      Swal.fire({
+      type: 'error',
+      title: 'Invalid Email Address',
+      text: 'Please Try Again',
+      })
+      return false;
+    }
 }
+
+
+

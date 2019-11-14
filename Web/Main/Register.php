@@ -29,7 +29,7 @@ require '../../PHP/Main/RegisterSystem.php';
   <img id="Logo" src="../../Images/Logo.png">
 </div>
 <div id="contentRegister">
-<form id="myForm" action="Register.php" method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit())" name="form">
+<form id="myForm" action="Register.php" method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit() & validEmail(form.stuEmail.value))" name="form">
 <h2>Register</h2>
     <input title="Please Enter ID Number" id="firstInput" class="registerInput" placeholder="ID" type="text" name="stuID" maxlength="9" onkeypress="return onlyNumber(event)"  required>
     <br />
@@ -43,17 +43,16 @@ require '../../PHP/Main/RegisterSystem.php';
     <input title="Please Confirm Password" id="confirmPassword" class="registerInput" placeholder="Re-Enter Password" type="password" name="stuConfirmPassword" required>
     <br />
     <br />
-    <input id="generateCAPTCHA" title="CAPTCHA" type="text" disabled>
+    <input style="font-size: 20px;" id="generateCAPTCHA" title="CAPTCHA" type="text" disabled>
     <br />
     <br />
-    <input style="text-align: center;" title="Please Enter CAPTCHA" id="answer" class="registerInput" placeholder="Type Answer" type="text" name="stuCAPTCHA">
+    <input style="text-align: center;" title="Please Enter CAPTCHA" id="answer" class="registerInput" placeholder="Type Answer" type="text" name="stuCAPTCHA" required>
     <br />
     <br />
     <input type="checkbox" onclick="showPassword();"> Show Password
     <br />
     <br />
-    <select name="groupDropDown" style="width: 250px;" required>
-      <option disabled selected hidden>Choose Group</option>
+    <select name="groupDropDown" style="width: 250px;">
       <option value="1">Group 1</option>
       <option value="2">Group 2</option>
       <option value="3">Group 3</option>

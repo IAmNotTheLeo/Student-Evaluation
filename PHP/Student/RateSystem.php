@@ -2,8 +2,9 @@
 
 if (isset($_POST['stuRate'])) {
   $stuToStudent = $_POST['groupMembersDropDown'];
+  $stuFromStudent = $_SESSION['UserIDLogin'];
 
-  $queryDoneEva = "SELECT * FROM Evaluation WHERE EvaluationTo = '$stuToStudent'";
+  $queryDoneEva = "SELECT * FROM Evaluation WHERE EvaluationTo = '$stuToStudent' AND EvaluationFrom = '$stuFromStudent'";
   $resultDoneEva = $connect->query($queryDoneEva);
 
   if ($resultDoneEva->num_rows === 1) {
