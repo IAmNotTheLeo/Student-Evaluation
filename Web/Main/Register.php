@@ -26,7 +26,7 @@ require '../../PHP/Main/RegisterSystem.php';
              </div>
 </div>
   <span id="navigationButton" onclick="openNav()">☰</span>
-  <img id="Logo" src="../../Images/Logo.png">
+  <img id="Logo" src="../../WebImage/Logo.png">
 </div>
 <div id="contentRegister">
 <form id="myForm" action="Register.php" method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit() & validEmail(form.stuEmail.value))" name="form">

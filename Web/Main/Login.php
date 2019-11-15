@@ -25,7 +25,7 @@ require '../../PHP/Main/LoginSystem.php';
              </div>
 </div>
   <span id="navigationButton" onclick="openNav()">☰</span>
-    <img id="Logo" src="../../Images/Logo.png">
+    <img id="Logo" src="../../WebImage/Logo.png">
 </div>
 <div id="contentLogin">
 <h2>Login</h2>

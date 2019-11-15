@@ -19,7 +19,7 @@
              </div>
 </div>
   <span id="navigationButton" onclick="openNav()">☰</span>
-  <img id="Logo" src="../../Images/Logo.png">
+  <img id="Logo" src="../../WebImage/Logo.png">
 </div>
 <div id="contentTutor">
 <div class="pagination">

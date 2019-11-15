@@ -29,7 +29,7 @@ require '../../PHP/Student/ShowSavedData.php';
       </div>
 </div>
   <span id="navigationButton" onclick="openNav()">☰</span>
-    <img id="Logo" src="../../Images/Logo.png">
+    <img id="Logo" src="../../WebImage/Logo.png">
 </div>
 <div id="contentStudent">
 <form method="POST" action="Evaluation.php" enctype="multipart/form-data">
@@ -60,7 +60,7 @@ require '../../PHP/Student/ShowSavedData.php';
 </textarea>
   <br />
   <br />
-  <input type="file" name="uploadImage" id="buttonFileUpload" class="btnChoose" accept="image/*"/ placeholder="Upload Image">
+  <input type="file" name="uploadImage" id="buttonFileUpload" class="btnChoose" accept="image/*" />
   <label for="buttonFileUpload" class="btnLabel">Upload Image</label>
 <br />
 <?php 

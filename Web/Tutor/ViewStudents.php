@@ -26,9 +26,9 @@ require '../../PHP/UserSession.php';
              </div>
 </div>
   <span id="navigationButton" onclick="openNav()">☰</span>
-    <img id="Logo" src="../../Images/Logo.png">
+    <img id="Logo" src="../../WebImage/Logo.png">
 </div>
-<div id="contentTutor">
+<div id="contentTutorEva">
 <h1>Students</h1>
 <h3><?php echo "Group " . $studentGroup ?></h3>
 <form method="POST">
@@ -39,13 +39,13 @@ require '../../PHP/UserSession.php';
   </select>
   <br />
   <br />
-    <input type="submit" name="showSelectStudent" value="Show Student">
+    <input class="buttonDesign" type="submit" name="showSelectStudent" value="Show Evaluation">
 </form>
 <br />
-<br />
 <div id="StudentEva">
-  <?php require '../../PHP/Tutor/ShowStudent.php'; ?>
+<?php require '../../PHP/Tutor/StudentEva.php'; ?>
 </div>
+<br />
 </div>
 </div>
   </body>
