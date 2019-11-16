@@ -1,6 +1,6 @@
 <?php  
 session_start();
-require '../../PHP/UserSession.php';
+require '../../PHP/Tutor/TutorSession.php';
 require '../../PHP/Tutor/ViewGroup.php';
 
 ?>

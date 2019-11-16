@@ -2,7 +2,7 @@
 session_start();
 
 require '../../PHP/Student/ShowGroupMembers.php';
-require '../../PHP/UserSession.php';
+require '../../PHP/Student/StudentSession.php';
 require '../../PHP/Student/RateSystem.php';
 
 ?>

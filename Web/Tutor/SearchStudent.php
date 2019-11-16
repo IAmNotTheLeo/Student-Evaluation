@@ -1,3 +1,8 @@
+<?php 
+session_start();
+require '../../PHP/Tutor/TutorSession.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

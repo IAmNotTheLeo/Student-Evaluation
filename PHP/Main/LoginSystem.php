@@ -14,11 +14,11 @@ if (isset($_POST['Logsubmit'])) {
     while ($row = $resultLogin->fetch_assoc()) {
 
       if($row['UserLevel'] == "Tutor") {
-        $_SESSION['UserSession'] = $row['UserLevel'];
+        $_SESSION['TutorSession'] = $row['UserLevel'];
         header("location: ../Tutor/GroupView.php");
       }
       else {
-        $_SESSION['UserSession'] = $row['UserLevel'];
+        $_SESSION['StudentSession'] = $row['UserLevel'];
         $_SESSION['UserIDLogin'] = $row['UserID'];
         $_SESSION['UserGroupNum'] = $row['UserGroup'];
         header("location: ../Student/RateStudent.php");

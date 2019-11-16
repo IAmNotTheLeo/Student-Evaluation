@@ -1,6 +1,6 @@
-<?php  
+<?php
 
-if(!isset($_SESSION['UserSession'])) {
+if(!isset($_SESSION['StudentSession'])) {
 	header("location: ../Main/Login.php");
   exit;
 }
