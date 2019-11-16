@@ -107,5 +107,16 @@ function validEmail(email) {
     }
 }
 
+///////////////////////////////////////////////////////
+function closeEva() {
+  var x = document.getElementById("displayDiv");
+  if (x.style.display !== "none") {
+    x.style.display = "none";
+  }
+}
+
+function openEva(){
+  document.getElementById('displayDiv').style.display='block'
+}
 
 

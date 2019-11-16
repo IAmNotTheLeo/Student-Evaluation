@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require '../../PHP/Tutor/TutorSession.php';
+require '../../PHP/Tutor/Pagination.php';
 
 ?>
 <!DOCTYPE html>
@@ -26,14 +27,53 @@ require '../../PHP/Tutor/TutorSession.php';
   <span id="navigationButton" onclick="openNav()">☰</span>
   <img id="Logo" src="../../WebImage/Logo.png">
 </div>
-<div id="contentTutor">
-<div class="pagination">
+<div id="contentSearch">
+  
+<table style="table-layout: auto;">
+    
+<tr>
+    <th>From Student</th>
+    <th>To Student</th>
+    <th>Grade</th>
+    <th>Evaluation</th>
+    <th>Student Image</th>
+  </tr>
+<tr>
+    <?php
+      while ($row = $resultPage->fetch_assoc()) {
+        echo "<td>" . $row['EvaluationFrom'] . "</td>";
+        echo "<td>" . $row['EvaluationTo'] . "</td>";
+        echo "<td>" . $row['Grade'] . "</td>";
+        echo "<td><textarea readonly style='display:block;margin:auto;height:100px;outline: 0;resize: none;'> " . $row['EComment'] ." </textarea></td>";
+        if (empty($row['StudentImage'])) {
+        echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='../../Images/Alternative/NoImage.png' /></td>";
+        } else {
+        echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='../../Images/".$row['StudentImage']."' /></td>";
+      }
+    ?>
+    
+  </tr>
+
+<?php } ?>
+  </table>
+  <br />
+  <form>
+  <div class="pagination">
   <a href="">1</a>
   <a href="">2</a>
   <a href="">3</a>
   <a href="">4</a>
-
 </div>
+<br/>
+  <select name="listSearch">
+    <option>Student's Evaluation</option>
+    <option>Grade</option>
+  </select>
+  <input type="text" name="searchInput">
+  <br />
+  <br />
+  <button type="submit" name="searchList" class="buttonDesign">Search</button>
+</form>
 </div>
   </body>
 </html>

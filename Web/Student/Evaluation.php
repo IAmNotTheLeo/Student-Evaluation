@@ -56,7 +56,7 @@ require '../../PHP/Student/ShowSavedData.php';
   Evaluation:
   <br />
   <br />
-  <textarea cols="30" rows="10" name="StuComment" placeholder="Evaluation" required><?php while ($rows = mysqli_fetch_array($resultSaved)){echo($rows['SaveComment']);}?>
+  <textarea cols="30" rows="10" id="eva" name="StuComment" placeholder="Evaluation" required><?php while ($rows = mysqli_fetch_array($resultSaved)){echo($rows['SaveComment']);}?>
 </textarea>
   <br />
   <br />

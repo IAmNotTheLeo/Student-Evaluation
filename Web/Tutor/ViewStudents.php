@@ -30,8 +30,7 @@ require '../../PHP/Tutor/StudentEva.php';
     <img id="Logo" src="../../WebImage/Logo.png">
 </div>
 <div id="contentTutorEva">
-<h1>Students</h1>
-<h3><?php echo "Group " . $studentGroup ?></h3>
+<h2> <?php echo "Group " . $studentGroup ?></h2>
 <form method="POST">
   <select name="studentDisplay">
   <?php while ($row = $resultViewGroup->fetch_array()) { ?>
@@ -43,7 +42,7 @@ require '../../PHP/Tutor/StudentEva.php';
     <input class="buttonDesign" type="submit" name="showSelectStudent" value="Show Evaluation">
 </form>
 <br />
-<?php echo "<i>From: </i>" .$student ?>
+<?php echo "<b>From: " . $student . "</b>" ?>
 <br />
 <br />
 <div id="StudentEva">
@@ -51,14 +50,16 @@ require '../../PHP/Tutor/StudentEva.php';
 
 if (isset($_POST['showSelectStudent'])) {
   while ($row = $resultDetails->fetch_array()) {
-  echo "<i>To: </i>" . $row['EvaluationTo'] . "<br /> <br />";
+  echo "<b>To: </b>" . $row['EvaluationTo'] . "<br /> <br />";
   echo "<b>Grade: </b>" . $row['Grade'] . "<br />" . "<br />";
-  echo "<b>Evaluation: </b>" . "<br />" . $row['EComment'] . "<br />" . "<br />";
+  echo "<b>Evaluation</b>" . "<br />" . $row['EComment'] . "<br />" . "<br />";
   if (empty($row['StudentImage'])) {
-  echo "<img width='125' height='125' src='../../Images/Alternative/NoImage.png' />";
+  echo "<img style='display:block;margin:auto;' width='100' height='100' src='../../Images/Alternative/NoImage.png' />";
   }
   else {
-  echo "<img width='125' height='125' src='../../Images/".$row['StudentImage']."' />";
+  echo "<b><u>Student's Image</u></b>";
+  echo "<br/>";
+  echo "<img style='display:block;margin:auto;' width='100' height='100' src='../../Images/".$row['StudentImage']."' />";
   }
   echo "<br /><br />";
   echo "<hr />";

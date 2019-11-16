@@ -3,8 +3,7 @@ html, body{
 	padding: 0;
 	height: 100%;
 	text-align: center;
-	background-image: linear-gradient(150deg, #ffffff 25%, #f8f7fb, #eeeff8, #e5e7f5, 
-		#dae0f2, #cbd6f2, #bcccf1, #acc2f1, #98b1f2, #87a0f2, #798df1, #6f7aee);
+	background-image: linear-gradient(150deg, #ffffff 25%, #f8f7fb, #eeeff8, #e5e7f5,#dae0f2, #cbd6f2, #bcccf1, #acc2f1, #98b1f2, #87a0f2, #798df1, #6f7aee);
 	background-repeat: no-repeat;
     background-attachment: fixed;
 	font-family: 'Open Sans', sans-serif;
@@ -92,12 +91,41 @@ html, body{
 	border-radius: 10px;
 	padding-left: 50px;
 	padding-right: 50px;
-	padding-bottom: 10px;
-	margin-top: 30px;
+	padding-bottom: 30px;
+	margin-top: 40px;
 	background: #ffff;
 	border-color: #000000;
  	display: inline-block;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
+}
+
+#contentSearch{
+	border-radius: 10px;
+	padding-top: 15px;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	background: #ffff;
+	border-color: #000000;
+ 	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
+}
+
+#StudentEva {
+	overflow: auto;
+	width: 500px;
+	height: 200px;
+	border: 1px solid black;
+	background-color: #FAFAFA;
+	border-radius: 5px;
+	text-align: center;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 50px;
+	word-wrap: break-word;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
 }
 
 .loginInput{
@@ -130,18 +158,6 @@ html, body{
 	padding-right: 20px;
 }
 
-#StudentEva {
-	overflow: auto;
-	width: 500px;
-	height: 200px;
-	border: 1px solid black;
-	border-radius: 5px;
-	background-color: #F6F6F6;
-	text-align: left;
-	padding: 10px;
-	word-wrap: break-word;
-}
-
 .linkWeb:hover{
 	color: #316ed8;
 }
@@ -151,7 +167,7 @@ html, body{
 	font-size: 15px;
 }
 
-textarea{
+textarea#eva{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
 	border-width: 1px;
 	border-color: #B0B0B0;
@@ -159,4 +175,21 @@ textarea{
 	border-bottom-right-radius: 5px;
 	outline: 0;
 	resize: none;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 9px;
+
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
