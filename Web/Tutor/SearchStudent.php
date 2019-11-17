@@ -40,6 +40,7 @@ require '../../PHP/Tutor/Pagination.php';
   </tr>
 <tr>
     <?php
+    if (isset($_POST['searchList'])) {
       while ($row = $resultPage->fetch_assoc()) {
         echo "<td>" . $row['EvaluationFrom'] . "</td>";
         echo "<td>" . $row['EvaluationTo'] . "</td>";
@@ -51,13 +52,12 @@ require '../../PHP/Tutor/Pagination.php';
         echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='../../Images/".$row['StudentImage']."' /></td>";
       }
     ?>
-    
   </tr>
 
-<?php } ?>
+<?php } } ?>
   </table>
   <br />
-  <form>
+  <form method="POST">
   <div class="pagination">
   <a href="">1</a>
   <a href="">2</a>
@@ -66,10 +66,10 @@ require '../../PHP/Tutor/Pagination.php';
 </div>
 <br/>
   <select name="listSearch">
-    <option>Student's Evaluation</option>
-    <option>Grade</option>
+    <option value="EvaluationFrom">Student's Evaluation</option>
+    <option value="Grade">Grade</option>
   </select>
-  <input type="text" name="searchInput">
+  <input type="text" name="searchInput" maxlength="9">
   <br />
   <br />
   <button type="submit" name="searchList" class="buttonDesign">Search</button>
