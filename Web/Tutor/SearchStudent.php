@@ -1,8 +1,6 @@
 <?php 
 session_start();
 require '../../PHP/Tutor/TutorSession.php';
-require '../../PHP/Tutor/Pagination.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -21,6 +19,7 @@ require '../../PHP/Tutor/Pagination.php';
 <div id="nav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
              <div class="overlay-content">
+              <a href="GroupView.php">Groups</a>
               <a href="Logout.php">Logout</a>
              </div>
 </div>
@@ -28,9 +27,9 @@ require '../../PHP/Tutor/Pagination.php';
   <img id="Logo" src="../../WebImage/Logo.png">
 </div>
 <div id="contentSearch">
-  
+  <?php require '../../PHP/Tutor/PaginationStudent.php'; ?>
+<div style="overflow: auto; height: 420px; width: 100%; border: 1px solid black; border-radius: 10px; padding: 10px;">  
 <table style="table-layout: auto;">
-    
 <tr>
     <th>From Student</th>
     <th>To Student</th>
@@ -40,8 +39,7 @@ require '../../PHP/Tutor/Pagination.php';
   </tr>
 <tr>
     <?php
-    if (isset($_POST['searchList'])) {
-      while ($row = $resultPage->fetch_assoc()) {
+      while ($row = $resultPage->fetch_array()) {
         echo "<td>" . $row['EvaluationFrom'] . "</td>";
         echo "<td>" . $row['EvaluationTo'] . "</td>";
         echo "<td>" . $row['Grade'] . "</td>";
@@ -53,23 +51,16 @@ require '../../PHP/Tutor/Pagination.php';
       }
     ?>
   </tr>
-
-<?php } } ?>
+<?php }  ?>
   </table>
-  <br />
-  <form method="POST">
-  <div class="pagination">
-  <a href="">1</a>
-  <a href="">2</a>
-  <a href="">3</a>
-  <a href="">4</a>
 </div>
-<br/>
+  <br />
+<form method="POST">
   <select name="listSearch">
-    <option value="EvaluationFrom">Student's Evaluation</option>
+    <option value="Evaluation">Evaluation (From & T</option>
     <option value="Grade">Grade</option>
   </select>
-  <input type="text" name="searchInput" maxlength="9">
+  <input type="text" name="searchInput" maxlength="9" onkeypress="return onlyNumber(event)" />
   <br />
   <br />
   <button type="submit" name="searchList" class="buttonDesign">Search</button>

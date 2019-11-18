@@ -25,6 +25,7 @@ require '../../PHP/Student/ShowSavedData.php';
 <div id="nav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <div class="overlay-content">
+          <a href="RateStudent.php">Rate Student</a>
           <a href="Logout.php">Logout</a>
       </div>
 </div>
