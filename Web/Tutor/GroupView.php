@@ -48,9 +48,7 @@ require '../../PHP/Tutor/ViewGroup.php';
 <button class="buttonDesign" type="submit" name="tuGroupView">View Student</button>
 </form>
 <br />
-<form method="POST" action="SearchStudent.php">
-<button class="buttonDesign" type="submit" name="tuSearchView">Search Student</button>  
-</form>
+<button class="buttonDesign" type="button" onclick="window.location.href='SearchStudent.php'" name="tuSearchView">Search Student</button>  
 </div>
   </body>
 </html>
