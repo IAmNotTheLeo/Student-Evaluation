@@ -22,7 +22,7 @@ require '../../PHP/Tutor/PaginationStudent.php';
   $(document).ready(function(){
     $('#example').DataTable({
       "iDisplayLength": 3,
-      "aLengthMenu": [[3, 4, 5, -1], [3 + " Per Page", 4 + " Per Page", 5 + " Per Page",  "All Evaluation"]],
+      "aLengthMenu": [[3, 4, 5, -1], [3 + " Per Page", 4 + " Per Page", 5 + " Per Page",  "All Evaluations"]],
       "bInfo" : false,
       "oLanguage": {
       "sLengthMenu": "Show _MENU_",
