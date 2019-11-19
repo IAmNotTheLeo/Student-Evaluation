@@ -1,6 +1,8 @@
 <?php 
 session_start();
 require '../../PHP/Tutor/TutorSession.php';
+require '../../PHP/Tutor/PaginationStudent.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -13,6 +15,19 @@ require '../../PHP/Tutor/TutorSession.php';
     <script src="../../JavaScript/navigation.js"></script>
     <script src="../../JavaScript/script.js"></script>
     <link rel="stylesheet" type="text/css" href="../../CSS/pagination.css">
+ <script src="../../JavaScript/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('#example').DataTable({
+      "iDisplayLength": 3,
+      "aLengthMenu": [[3, 4, 5, -1], [3, 4, 5, "All Evaluation"]],
+      "bInfo" : false
+    });
+  });
+</script>
+
   </head>
   <body>
     <div id="second-header">
@@ -27,44 +42,41 @@ require '../../PHP/Tutor/TutorSession.php';
   <img id="Logo" src="../../WebImage/Logo.png">
 </div>
 <div id="contentSearch">
-  <?php require '../../PHP/Tutor/PaginationStudent.php'; ?>
-<div style="overflow: auto; height: 420px; width: 100%; border: 1px solid black; border-radius: 10px; padding: 10px;">  
-<table style="table-layout: auto;">
-<tr>
-    <th>From Student</th>
-    <th>To Student</th>
-    <th>Grade</th>
-    <th>Evaluation</th>
-    <th>Student Image</th>
-  </tr>
-<tr>
-    <?php
-      while ($row = $resultPage->fetch_array()) {
-        echo "<td>" . $row['EvaluationFrom'] . "</td>";
-        echo "<td>" . $row['EvaluationTo'] . "</td>";
-        echo "<td>" . $row['Grade'] . "</td>";
-        echo "<td><textarea readonly style='display:block;margin:auto;height:100px;outline: 0;resize: none;'> " . $row['EComment'] ." </textarea></td>";
-        if (empty($row['StudentImage'])) {
+  <h3>Search</h3>
+<div style="overflow: auto; height: 480px; border: 1px solid black; border-radius: 10px; padding: 25px;">  
+
+  <table id="example" class="display" cellspacing="0">
+    <thead>
+      <tr>
+        <td>Evaluation From</td>
+        <td>Evaluation To</td>
+        <td>Grade</td>
+        <td>Comment</td>
+        <td>Student Image</td>
+      </tr>
+    </thead>
+    <?php 
+    while ($row = mysqli_fetch_array($result)){
+      echo "<tr>";
+    echo "<td>" . $row['EvaluationFrom'] . "</td>";
+    echo "<td>" . $row['EvaluationTo'] . "</td>";
+    echo "<td>" . $row['Grade'] . "</td>";
+        echo "<td><textarea readonly style='height:100px;resize: none;'> " . $row['EComment'] ." </textarea></td>";
+      if (empty($row['StudentImage'])) {
         echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='../../Images/Alternative/NoImage.png' /></td>";
         } else {
         echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='../../Images/".$row['StudentImage']."' /></td>";
       }
+      echo "</tr>";
+      
+    }
     ?>
-  </tr>
-<?php }  ?>
-  </table>
+        
+</table>
+
+
 </div>
   <br />
-<form method="POST">
-  <select name="listSearch">
-    <option value="Evaluation">Evaluation (From & T</option>
-    <option value="Grade">Grade</option>
-  </select>
-  <input type="text" name="searchInput" maxlength="9" onkeypress="return onlyNumber(event)" />
-  <br />
-  <br />
-  <button type="submit" name="searchList" class="buttonDesign">Search</button>
-</form>
 </div>
   </body>
 </html>
