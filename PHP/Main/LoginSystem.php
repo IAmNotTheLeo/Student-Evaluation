@@ -30,7 +30,7 @@ if (isset($_POST['Logsubmit'])) {
     }
   }
   else {
-    $msg = "<script>Swal.fire({type: 'error',title: 'User ID or Password is Wrong',text: 'Please Enter Valid Data',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
+    $msg = "<script>Swal.fire({type: 'error',title: 'User ID or Password is Wrong',text: 'Please Enter Valid Data',allowOutsideClick: false,confirmButtonText: 'Try Again'})</script>";
   }
 }
 

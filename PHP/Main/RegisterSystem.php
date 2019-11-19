@@ -21,17 +21,17 @@ if (isset($_POST['regSubmit'])) {
 
 
   if ($resultExist->num_rows > 0) {
-    $msg = "<script>Swal.fire({type: 'error',title: 'Student ID or Email Already Exists',text: 'Please Enter An Nonexistent Account',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
+    $msg = "<script>Swal.fire({type: 'error',title: 'Student ID or Email Already Exists',text: 'Please Enter An Nonexistent Account',allowOutsideClick: false,confirmButtonText: 'Try Again'})</script>";
   }
 
   else if ($resultLimit->num_rows === 3) {
-    $msg = "<script>Swal.fire({type: 'error',title: 'Group Full',text: 'Please Select Another Group that is Available',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
+    $msg = "<script>Swal.fire({type: 'error',title: 'Group Full',text: 'Please Select Another Group that is Available',allowOutsideClick: false,confirmButtonText: 'Try Again'})</script>";
   }
 
   else {
         $queryRegister = "INSERT INTO UserTable (UserID, UserEmail, UserPassword, UserGroup, UserLevel) VALUES ('" . $studentID . "','" . $studentEmail . "','" . $studentPassword . "','" . $studentGroup . "','" . $studentLevel . "')";
         $connect->query($queryRegister);
-        $msg = "<script>Swal.fire({type: 'success',title: 'Acccount Created',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'Login.php';}})</script>";
+        $msg = "<script>Swal.fire({type: 'success',title: 'Acccount Created',allowOutsideClick: false,confirmButtonText: 'Proceed',}).then((result) => {if (result.value) {location.href = 'Login.php';}})</script>";
   }
 }
 ?>
