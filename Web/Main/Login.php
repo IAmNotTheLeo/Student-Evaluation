@@ -1,3 +1,8 @@
+<?php
+   session_start();
+   require '../../PHP/Main/LoginSystem.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
