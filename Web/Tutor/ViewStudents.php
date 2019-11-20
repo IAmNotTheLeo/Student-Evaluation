@@ -58,7 +58,7 @@
                  else {
                  echo "<b><u>Student's Image</u></b>";
                  echo "<br/>";
-                 echo "<img style='display:block;margin:auto;' width='100' height='100' src='../../Images/".$row['StudentImage']."' />";
+                 echo '<img style="display:block;margin:auto;"" width="100" height="100" src="data:'.$row['ImageType'].';base64,'.base64_encode($row['StudentImage']).'"/>';
                  }
                  echo "<br /><br />";
                  echo "<hr />";

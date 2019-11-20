@@ -1,19 +1,17 @@
 <?php
 
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php";
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php";
 
 if (isset($_POST['stuUpload'])) {
     $stuFromStudent = $_SESSION['UserIDLogin'];
     $stuToStudent   = $_SESSION['ToStudent'];
     $stuEvaGrade    = $_POST['StuGrade'];
     $stuEvaComment  = mysqli_real_escape_string($connect, $_POST['StuComment']);
-    $stuImageName   = $_FILES['uploadImage']['name'];
-    $stuEvatmp      = $_FILES['uploadImage']['tmp_name'];
-    
-    $fileTarget = "../../Images/" . basename($stuImageName);
-    
-    $queryEva = "INSERT INTO Evaluation (Grade, EComment, StudentImage, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuImageName','$stuToStudent', '$stuFromStudent')";
+    $stuImageName   = addslashes(file_get_contents($_FILES['uploadImage']['tmp_name']));
+    $stuImageType   = $_FILES['uploadImage']['type'];
+
+    $queryEva = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuImageName', '$stuImageType', '$stuToStudent', '$stuFromStudent')";
     
     $queryDeleteSave = "DELETE FROM SaveComment WHERE EvaluationFrom ='$stuFromStudent' AND EvaluationTo ='$stuToStudent'";
     
@@ -32,7 +30,6 @@ if (isset($_POST['stuUpload'])) {
         $msg = "<script>Swal.fire({type: 'error',title: 'File Too Large',text: 'Please Select A Reasonable File Size',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
         
     } else {
-        move_uploaded_file($stuEvatmp, $fileTarget);
         $connect->query($queryEva);
         $connect->query($queryDeleteSave);
         $msg;
