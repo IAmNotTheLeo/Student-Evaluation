@@ -4,8 +4,8 @@
 require "../../PHP/connection.php";
 
 if (isset($_POST['Logsubmit'])) {
-    $ID_L       = $_POST['IDLogin'];
-    $Password_L = md5($_POST['PasswordLogin']);
+    $ID_L       = mysqli_real_escape_string($connect,$_POST['IDLogin']);
+    $Password_L = mysqli_real_escape_string($connect, md5($_POST['PasswordLogin']));
     
     $queryLogin  = "SELECT * FROM UserTable WHERE UserID = '$ID_L' AND UserPassword = '$Password_L' LIMIT 1";
     $resultLogin = $connect->query($queryLogin);

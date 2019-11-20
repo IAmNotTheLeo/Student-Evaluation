@@ -12,7 +12,7 @@ if (isset($_POST['regSubmit'])) {
     $studentGroup    = $_POST['groupDropDown'];
     $studentLevel    = "Student";
     
-    $queryExist  = "SELECT UserID, UserEmail FROM UserTable WHERE UserID = " . $studentID . " OR UserEmail = " . $studentEmail . "";
+    $queryExist  = "SELECT UserID, UserEmail FROM UserTable WHERE UserID = '$studentID' OR UserEmail = '$studentEmail'";
     $resultExist = $connect->query($queryExist);
     
     
