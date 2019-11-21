@@ -5,7 +5,7 @@ if (isset($_POST['stuRate'])) {
     $stuFromStudent = $_SESSION['UserIDLogin'];
     
     $queryDoneEva  = "SELECT * FROM Evaluation WHERE EvaluationTo = '$stuToStudent' AND EvaluationFrom = '$stuFromStudent'";
-    $resultDoneEva = $connect->query($queryDoneEva);
+    $resultDoneEva = $connect->query($queryDoneEva) or die("Fail");
     
     if ($resultDoneEva->num_rows === 1) {
         $msg = "<script>Swal.fire({type: 'error',title: 'Already Evaluated Student',text: 'Please Select Another Student to Evaluate',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";

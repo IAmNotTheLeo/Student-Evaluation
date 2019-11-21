@@ -1,14 +1,14 @@
 <?php
 
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
 if (isset($_POST['Logsubmit'])) {
     $ID_L       = mysqli_real_escape_string($connect,$_POST['IDLogin']);
     $Password_L = mysqli_real_escape_string($connect, md5($_POST['PasswordLogin']));
     
     $queryLogin  = "SELECT * FROM UserTable WHERE UserID = '$ID_L' AND UserPassword = '$Password_L' LIMIT 1";
-    $resultLogin = $connect->query($queryLogin);
+    $resultLogin = $connect->query($queryLogin) or die("Fail");
     
     if ($resultLogin->num_rows > 0) {
         

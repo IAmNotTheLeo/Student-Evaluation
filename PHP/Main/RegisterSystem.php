@@ -1,7 +1,7 @@
 <?php
 
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
 
 if (isset($_POST['regSubmit'])) {
@@ -13,11 +13,11 @@ if (isset($_POST['regSubmit'])) {
     $studentLevel    = "Student";
     
     $queryExist  = "SELECT UserID, UserEmail FROM UserTable WHERE UserID = '$studentID' OR UserEmail = '$studentEmail'";
-    $resultExist = $connect->query($queryExist);
+    $resultExist = $connect->query($queryExist) or die("Fail");
     
     
     $queryLimit  = "SELECT * FROM UserTable WHERE UserGroup = " . $studentGroup . "";
-    $resultLimit = $connect->query($queryLimit);
+    $resultLimit = $connect->query($queryLimit) or die("Fail");
     
     
     if ($resultExist->num_rows > 0) {
@@ -30,7 +30,7 @@ if (isset($_POST['regSubmit'])) {
     
     else {
         $queryRegister = "INSERT INTO UserTable (UserID, UserEmail, UserPassword, UserGroup, UserLevel) VALUES ('" . $studentID . "','" . $studentEmail . "','" . $studentPassword . "','" . $studentGroup . "','" . $studentLevel . "')";
-        $connect->query($queryRegister);
+        $connect->query($queryRegister) or die("Fail");
         $msg = "<script>Swal.fire({type: 'success',title: 'Acccount Created',allowOutsideClick: false,confirmButtonText: 'Proceed',}).then((result) => {if (result.value) {location.href = 'Login.php';}})</script>";
     }
 }

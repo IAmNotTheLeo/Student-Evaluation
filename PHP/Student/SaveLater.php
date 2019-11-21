@@ -1,7 +1,7 @@
 <?php
 
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
 if (isset($_POST['stuSaveLater'])) {
     $saveStuFrom     = $_SESSION['UserIDLogin'];
@@ -14,7 +14,7 @@ if (isset($_POST['stuSaveLater'])) {
         </script>";
     
     $queryCheck  = "SELECT SaveComment FROM SaveComment WHERE EvaluationFrom ='$saveStuFrom' AND EvaluationTo ='$saveStuTo'";
-    $resultCheck = $connect->query($queryCheck);
+    $resultCheck = $connect->query($queryCheck) or die("Fail");
     
     if ($resultCheck->num_rows === 0) {
         $queryEvaSaved = "INSERT INTO SaveComment (EvaluationTo, EvaluationFrom, SaveComment) VALUES ('$saveStuTo','$saveStuFrom', '$stuSavedComment')";
