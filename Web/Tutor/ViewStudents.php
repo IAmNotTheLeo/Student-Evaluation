@@ -53,7 +53,7 @@
                  echo "<b>Grade: </b>" . $row['Grade'] . "<br />" . "<br />";
                  echo "<b>Evaluation</b>" . "<br />" . $row['EComment'] . "<br />" . "<br />";
                  if (empty($row['StudentImage'])) {
-                 echo "<img style='display:block;margin:auto;' width='100' height='100' src='../../Images/Alternative/NoImage.png' />";
+                 echo "<img style='display:block;margin:auto;' width='100' height='100' src='../../Images/NoImage.png' />";
                  }
                  else {
                  echo "<b><u>Student's Image</u></b>";

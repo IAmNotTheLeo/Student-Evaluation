@@ -15,7 +15,7 @@ if (isset($_POST['stuUpload'])) {
     $msg = "<script>Swal.fire({type: 'success',title: 'Evaluation Complete',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'RateStudent.php';}})</script>";
     
     if (!($_FILES['uploadImage']['type'])) {
-        $queryNoImage = "INSERT INTO Evaluation (Grade, EComment, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuToStudent', '$stuFromStudent')";
+        $queryNoImage = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuImageName', '$stuImageType', '$stuToStudent', '$stuFromStudent')";
         $connect->query($queryNoImage) or die("Fail");
         $connect->query($queryDeleteSave);
         $msg;
