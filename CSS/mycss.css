@@ -111,6 +111,18 @@ html, body{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
 }
 
+#contentEmail{
+	border-radius: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 30px;
+	margin-top: 40px;
+	background: #ffff;
+	border-color: #000000;
+ 	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
+}
+
 #StudentEva {
 	overflow: auto;
 	width: 500px;

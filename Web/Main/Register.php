@@ -1,7 +1,7 @@
 <?php
    session_start();
    require '../../PHP/Main/RegisterSystem.php';
-   
+   //https://codingcyber.org/simple-captcha-script-php-5765/
    ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -43,7 +43,7 @@
             <input title="Please Confirm Password" id="confirmPassword" class="registerInput" placeholder="Re-Enter Password" type="password" name="stuConfirmPassword" required>
             <br />
             <br />
-            <input style="font-size: 20px;" id="generateCAPTCHA" title="CAPTCHA" type="text" disabled>
+            <input style="font-size: 20px; " id="generateCAPTCHA" title="CAPTCHA" type="text" disabled="" readonly="">
             <br />
             <br />
             <input style="text-align: center;" title="Please Enter CAPTCHA" id="answer" class="registerInput" placeholder="Type Answer" type="text" name="stuCAPTCHA" required>

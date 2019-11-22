@@ -64,7 +64,7 @@
                   echo "<td>" . $row['Grade'] . "</td>";
                       echo "<td><textarea readonly style='height:100px;resize: none;'> " . $row['EComment'] ." </textarea></td>";
                     if (empty($row['StudentImage'])) {
-                      echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='../../Images/Alternative/NoImage.png' /></td>";
+                      echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='../../Images/NoImage.png' /></td>";
                       } else {
                         echo '<td><img style="display:block;margin:auto;"" width="100" height="100" src="data:'.$row['ImageType'].';base64,'.base64_encode($row['StudentImage']).'"/></td>';
                     }

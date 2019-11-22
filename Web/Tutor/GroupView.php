@@ -45,9 +45,12 @@
             <br />
             <br />
             <button class="buttonDesign" type="submit" name="tuGroupView">View Student</button>
+            <br />
+            <br />
+         <button class="buttonDesign" type="submit" name="tuSendEmail">Email Group</button>
          </form>
          <br />
-         <button class="buttonDesign" type="button" onclick="window.location.href='SearchStudent.php'" name="tuSearchView">Search Student</button>  
+         <button class="buttonDesign" type="button" onclick="window.location.href='SearchStudent.php'" name="tuSearchView">Search Student</button>
       </div>
    </body>
 </html>
