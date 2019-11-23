@@ -31,22 +31,22 @@
       <div id="contentRegister">
          <form id="myForm" action="Register.php" method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit() & validEmail(form.stuEmail.value))" name="form">
             <h2>Register</h2>
-            <input title="Please Enter ID Number" id="firstInput" class="registerInput" placeholder="ID" type="text" name="stuID" maxlength="9" onkeypress="return onlyNumber(event)"  required>
+            <input title="Please Enter ID Number" id="firstInput" class="Input" placeholder="ID" type="text" name="stuID" maxlength="9" onkeypress="return onlyNumber(event)"  required>
             <br />
             <br />
-            <input title="Please Enter University Email" class="registerInput" placeholder="Email" type="email" name="stuEmail" required>
+            <input title="Please Enter University Email" class="Input" placeholder="Email" type="email" name="stuEmail" required>
             <br/>
             <br/>
-            <input title="Please Enter Password" id="passwordID" class="registerInput" placeholder="Password" type="password" name="stuPassoword" required>
+            <input title="Please Enter Password" id="passwordID" class="Input" placeholder="Password" type="password" name="stuPassoword" required>
             <br />
             <br />
-            <input title="Please Confirm Password" id="confirmPassword" class="registerInput" placeholder="Re-Enter Password" type="password" name="stuConfirmPassword" required>
+            <input title="Please Confirm Password" id="confirmPassword" class="Input" placeholder="Re-Enter Password" type="password" name="stuConfirmPassword" required>
             <br />
             <br />
             <input style="font-size: 20px; " id="generateCAPTCHA" title="CAPTCHA" type="text" disabled="" readonly="">
             <br />
             <br />
-            <input style="text-align: center;" title="Please Enter CAPTCHA" id="answer" class="registerInput" placeholder="Type Answer" type="text" name="stuCAPTCHA" required>
+            <input style="text-align: center;" title="Please Enter CAPTCHA" id="answer" class="Input" placeholder="Type Answer" type="text" name="stuCAPTCHA" required>
             <br />
             <br />
             <input type="checkbox" onclick="showPassword();"> Show Password

@@ -1,5 +1,7 @@
-<?php 
-
+<?php
+session_start();
+require '../../PHP/Tutor/StudentsViewEmail.php';
+require '../../PHP/Tutor/EmailGroup.php';
 
 ?>
 <!DOCTYPE html>
@@ -28,6 +30,16 @@
       </div>
       <div id="contentEmail">
          <h2>Email</h2>
+         <div id="emailLayout">
+            <b>To</b>: <?php echo "Group " . $studentGroup . " Members"?>
+            <br />
+            <b>Subject</b>: <input class="Input" type="text" name="subjectEmail">
+            <br />
+            <br />
+            <textarea id="messageText" name="messageEmail"></textarea>
+         </div>
+         <br/>
+         <button class="buttonDesign" type="submit" name="sendEmail">Send</button>
       </div>
       </div>
    </body>

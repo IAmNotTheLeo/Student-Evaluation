@@ -32,11 +32,11 @@
          <h2>Login</h2>
          <form method="POST" action="Login.php">
             <br />
-            <input class="loginInput" type="text" placeholder="ID" maxlength="9" onkeypress="return onlyNumber(event)" name="IDLogin"
+            <input class="Input" type="text" placeholder="ID" maxlength="9" onkeypress="return onlyNumber(event)" name="IDLogin"
                value="<?php if (isset($_COOKIE['IDLogin'])) { echo $_COOKIE['IDLogin'];}?>" required>
             <br />
             <br />
-            <input class="loginInput" type="password" placeholder="Password" name="PasswordLogin" required>
+            <input class="Input" type="password" placeholder="Password" name="PasswordLogin" required>
             <br />
             <br />
             <a class="linkWeb" href="Register.php">Haven't Registered?</a>
