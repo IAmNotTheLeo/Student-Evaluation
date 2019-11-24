@@ -13,8 +13,9 @@ require '../../PHP/Tutor/EmailGroup.php';
       <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">
       <script src="../../JavaScript/navigation.js"></script>
+      <script src="../../JavaScript/sweetalert2.min.js"></script>
       <script src="../../JavaScript/script.js"></script>
-      <link rel="stylesheet" type="text/css" href="../../CSS/pagination.css">
+      <link rel="stylesheet" href="../../CSS/sweetalert2.min.css">
    </head>
    <body>
       <div id="second-header">
@@ -26,7 +27,7 @@ require '../../PHP/Tutor/EmailGroup.php';
             </div>
          </div>
          <span id="navigationButton" onclick="openNav()">☰</span>
-         <img id="Logo" src="../../WebImage/Logo.png">
+         <img id="Logo" src="../../Images/Logo.png">
       </div>
       <div id="contentEmail">
          <h2>Email</h2>
@@ -34,14 +35,50 @@ require '../../PHP/Tutor/EmailGroup.php';
          <div id="emailLayout">
             <b>To</b>: <?php echo "Group " . $studentGroup . " Members"?>
             <br />
-            <b>Subject</b>: <input class="Input" type="text" name="subjectEmail">
+            <b>Subject</b>: <input class="Input" type="text" name="subjectEmail" required>
             <br />
             <br />
-            <textarea id="messageText" name="messageEmail"></textarea>
+            <textarea id="messageText" name="messageEmail" required></textarea>
          </div>
+         <br />
+
+<div id="id01" class="w3-modal w3-animate-opacity">
+
+</div>
+
+         
+
+         <img src="../../Images/Info.png" width="25" height="25" style="cursor: pointer;" onclick="document.getElementById('id01').style.display='block'">
+
+
+
+
+
+
+
+         <br />
+         <br />
+         <input type="checkbox" name="incomplete">  Incomplete Group
          <br/>
-         <button class="buttonDesign" type="submit" name="sendEmail">Send</button>
-      </div>
-   </form>
+         <br/>
+         <?php
+         if (isset($_POST['sendEmail'])) {
+            echo $msg;
+         }
+         ?>
+         <button class="buttonDesign" type="submit" name="sendEmail">Send Email</button>
+         <br />
+         <br />
+      </form>
+      <form method="POST">
+         <?php
+         if (isset($_POST['showGroupEva'])) {
+            echo $msg;
+         }
+         ?>
+      <button class="buttonDesign" name="showGroupEva" title="Check Group">Group Evaluation</button>
+      </form>
+   </div>
+
    </body>
 </html>

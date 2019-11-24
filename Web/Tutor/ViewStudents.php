@@ -27,7 +27,7 @@
             </div>
          </div>
          <span id="navigationButton" onclick="openNav()">☰</span>
-         <img id="Logo" src="../../WebImage/Logo.png">
+         <img id="Logo" src="../../Images/Logo.png">
       </div>
       <div id="contentTutorEva">
          <h2> <?php echo "Group " . $studentGroup ?></h2>

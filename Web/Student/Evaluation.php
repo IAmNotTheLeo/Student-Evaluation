@@ -29,7 +29,7 @@
             </div>
          </div>
          <span id="navigationButton" onclick="openNav()">☰</span>
-         <img id="Logo" src="../../WebImage/Logo.png">
+         <img id="Logo" src="../../Images/Logo.png">
       </div>
       <div id="contentStudent">
          <form method="POST" action="Evaluation.php" enctype="multipart/form-data">

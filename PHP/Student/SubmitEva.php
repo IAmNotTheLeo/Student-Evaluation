@@ -1,7 +1,7 @@
 <?php
 
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php";
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php";
 
 if (isset($_POST['stuUpload'])) {
     $stuFromStudent = $_SESSION['UserIDLogin'];
@@ -9,13 +9,14 @@ if (isset($_POST['stuUpload'])) {
     $stuEvaGrade    = $_POST['StuGrade'];
     $stuEvaComment  = mysqli_real_escape_string($connect, $_POST['StuComment']);
     $stuImageType   = $_FILES['uploadImage']['type'];
+    $stuGroupEva    = $_SESSION['UserGroupNum'];
     
     $queryDeleteSave = "DELETE FROM SaveComment WHERE EvaluationFrom ='$stuFromStudent' AND EvaluationTo ='$stuToStudent'";
     
     $msg = "<script>Swal.fire({type: 'success',title: 'Evaluation Complete',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'RateStudent.php';}})</script>";
     
     if (!($_FILES['uploadImage']['type'])) {
-        $queryNoImage = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuImageName', '$stuImageType', '$stuToStudent', '$stuFromStudent')";
+        $queryNoImage = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom, GroupEva) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuImageName', '$stuImageType', '$stuToStudent', '$stuFromStudent', '$stuGroupEva')";
         $connect->query($queryNoImage) or die("Fail");
         $connect->query($queryDeleteSave);
         $msg;
@@ -29,7 +30,7 @@ if (isset($_POST['stuUpload'])) {
         
     } else {
         $stuImageName   = addslashes(file_get_contents($_FILES['uploadImage']['tmp_name']));
-        $queryEva = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuImageName', '$stuImageType', '$stuToStudent', '$stuFromStudent')";
+        $queryEva = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom, GroupEva) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuImageName', '$stuImageType', '$stuToStudent', '$stuFromStudent', '$stuGroupEva ')";
         $connect->query($queryEva) or die("Fail");
         $connect->query($queryDeleteSave);
         $msg;

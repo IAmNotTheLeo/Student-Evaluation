@@ -1,7 +1,7 @@
 <?php
 
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php";
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php";
 
 if (isset($_POST['Logsubmit'])) {
     $ID_L       = mysqli_real_escape_string($connect,$_POST['IDLogin']);
@@ -16,6 +16,7 @@ if (isset($_POST['Logsubmit'])) {
             
             if ($row['UserLevel'] == "Tutor") {
                 $_SESSION['TutorSession'] = $row['UserLevel'];
+                $_SESSION['UserTuEmail'] = $row['UserEmail'];
                 header("location: ../Tutor/GroupView.php");
             } else {
                 $_SESSION['StudentSession'] = $row['UserLevel'];
