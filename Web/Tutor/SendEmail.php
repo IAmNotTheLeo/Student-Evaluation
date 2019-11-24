@@ -30,6 +30,7 @@ require '../../PHP/Tutor/EmailGroup.php';
       </div>
       <div id="contentEmail">
          <h2>Email</h2>
+         <form method="POST">
          <div id="emailLayout">
             <b>To</b>: <?php echo "Group " . $studentGroup . " Members"?>
             <br />
@@ -41,6 +42,6 @@ require '../../PHP/Tutor/EmailGroup.php';
          <br/>
          <button class="buttonDesign" type="submit" name="sendEmail">Send</button>
       </div>
-      </div>
+   </form>
    </body>
 </html>

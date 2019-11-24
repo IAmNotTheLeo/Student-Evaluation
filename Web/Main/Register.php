@@ -29,12 +29,12 @@
          <img id="Logo" src="../../WebImage/Logo.png">
       </div>
       <div id="contentRegister">
-         <form id="myForm" action="Register.php" method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit() & validEmail(form.stuEmail.value))" name="form">
+         <form id="myForm" action="Register.php" method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit())" name="form">
             <h2>Register</h2>
             <input title="Please Enter ID Number" id="firstInput" class="Input" placeholder="ID" type="text" name="stuID" maxlength="9" onkeypress="return onlyNumber(event)"  required>
             <br />
             <br />
-            <input title="Please Enter University Email" class="Input" placeholder="Email" type="email" name="stuEmail" required>
+            <input title="Please Enter University Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="Input" placeholder="Email" type="email" name="stuEmail" required>
             <br/>
             <br/>
             <input title="Please Enter Password" id="passwordID" class="Input" placeholder="Password" type="password" name="stuPassoword" required>

@@ -87,23 +87,6 @@ function checkCaptcha() {
     }
 }
 
-
-///////////////////////////////////////////////////////
-
-function validEmail(email) {
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    if (reg.test(email)) {
-        return true;
-    } else {
-        Swal.fire({
-            type: 'error',
-            title: 'Invalid Email Address',
-            text: 'Please Try Again',
-        })
-        return false;
-    }
-}
-
 ///////////////////////////////////////////////////////
 function closeEva() {
     var x = document.getElementById("displayDiv");
