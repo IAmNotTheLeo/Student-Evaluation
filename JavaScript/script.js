@@ -55,20 +55,16 @@ function onlyNumber(press) {
 
 ///////////////////////////////////////////////////////
 
-var captcha;
-var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
+var captcha = '';
+var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
 
 function generateCaptcha() {
-    var num1 = Math.floor((Math.random() * 10));
-    var letter1 = chars.substr(Math.floor(Math.random() * 25), 2);
-    var num2 = Math.floor((Math.random() * 10));
-    var letter2 = chars.substr(Math.floor(Math.random() * 25), 2);
-    var num3 = Math.floor((Math.random() * 10));
-
-    captcha = num1.toString() + letter1 + num2.toString() + letter2 + num3.toString();
-
-    document.getElementById("generateCAPTCHA").value = captcha;
+    var length = 5;
+    for (var i=0; i<length; i++) {
+        var rnum = Math.floor(Math.random() * chars.length);
+        captcha += chars.substring(rnum,rnum+1);
+    }
+    document.getElementById("generateCAPTCHA").innerHTML = captcha;
 }
 
 

@@ -39,29 +39,27 @@
             Grade:
             <br />
             <br />
-            <select style="width: 100px;" name="StuGrade">
-               <option value="1">1</option>
-               <option value="2">2</option>
-               <option value="3">3</option>
-               <option value="4">4</option>
-               <option value="5">5</option>
-               <option value="6">6</option>
-               <option value="7">7</option>
-               <option value="8">8</option>
-               <option value="9">9</option>
-               <option value="10">10</option>
+            <select style="width: 110px;" name="StuGrade">                  
+               <option value="1" <?php if ($_POST['StuGrade'] == '1') echo 'selected="selected"'; ?>>1</option>
+               <option value="2" <?php if ($_POST['StuGrade'] == '2') echo 'selected="selected"'; ?>>2</option>
+               <option value="3" <?php if ($_POST['StuGrade'] == '3') echo 'selected="selected"'; ?>>3</option>
+               <option value="4" <?php if ($_POST['StuGrade'] == '4') echo 'selected="selected"'; ?>>4</option>
+               <option value="5" <?php if ($_POST['StuGrade'] == '5') echo 'selected="selected"'; ?>>5</option>
+               <option value="6" <?php if ($_POST['StuGrade'] == '6') echo 'selected="selected"'; ?>>6</option>
+               <option value="7" <?php if ($_POST['StuGrade'] == '7') echo 'selected="selected"'; ?>>7</option>
+               <option value="8" <?php if ($_POST['StuGrade'] == '8') echo 'selected="selected"'; ?>>8</option>
+               <option value="9" <?php if ($_POST['StuGrade'] == '9') echo 'selected="selected"'; ?>>9</option>
+               <option value="10" <?php if ($_POST['StuGrade'] == '10') echo 'selected="selected"'; ?>>10</option>
             </select>
             <br />
             <br />
             Evaluation:
             <br />
             <br />
-            <textarea cols="30" rows="10" id="eva" name="StuComment" placeholder="Evaluation" required><?php while ($rows = mysqli_fetch_array($resultSaved)){echo($rows['SaveComment']);}?>
-</textarea>
+            <textarea cols="30" rows="10" id="eva" name="StuComment" placeholder="Evaluation" required><?php while ($rows = mysqli_fetch_array($resultSaved)){echo($rows['SaveComment']);}?><?php if (isset($_POST['StuComment'])){ echo $_POST['StuComment']; } else { echo ''; } ?></textarea>
             <br />
             <br />
-            <input type="file" name="uploadImage" id="buttonFileUpload" class="btnChoose" accept="image/*" />
-            <label for="buttonFileUpload" class="btnLabel">Upload Image</label>
+            <input style="margin-left: 60px;" type="file" name="uploadImage" accept="image/*" />
             <br />
             <?php 
                if (isset($_POST['stuUpload']) || isset($_POST['stuSaveLater'])) {

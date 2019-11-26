@@ -1,9 +1,9 @@
 <?php
 
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
-if (isset($_POST['stuUpload'])) {
+if (isset($_POST['stuUpload'])) {   
     $stuFromStudent = $_SESSION['UserIDLogin'];
     $stuToStudent   = $_SESSION['ToStudent'];
     $stuEvaGrade    = $_POST['StuGrade'];

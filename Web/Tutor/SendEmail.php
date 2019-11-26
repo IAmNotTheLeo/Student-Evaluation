@@ -41,23 +41,6 @@ require '../../PHP/Tutor/EmailGroup.php';
             <textarea id="messageText" name="messageEmail" required></textarea>
          </div>
          <br />
-
-<div id="id01" class="w3-modal w3-animate-opacity">
-
-</div>
-
-         
-
-         <img src="../../Images/Info.png" width="25" height="25" style="cursor: pointer;" onclick="document.getElementById('id01').style.display='block'">
-
-
-
-
-
-
-
-         <br />
-         <br />
          <input type="checkbox" name="incomplete">  Incomplete Group
          <br/>
          <br/>
