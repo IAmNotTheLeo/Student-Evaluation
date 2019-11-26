@@ -1,12 +1,12 @@
 <?php
 
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php";
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php";
 
 if (isset($_POST['stuSaveLater'])) {
     $saveStuFrom     = $_SESSION['UserIDLogin'];
     $saveStuTo       = $_SESSION['ToStudent'];
-    $stuSavedComment = $_POST['StuComment'];
+    $stuSavedComment = mysqli_real_escape_string($_POST['StuComment']);
     
     $msg = "
         <script>
@@ -17,7 +17,7 @@ if (isset($_POST['stuSaveLater'])) {
     $resultCheck = $connect->query($queryCheck) or die("Fail");
     
     if ($resultCheck->num_rows === 0) {
-        $queryEvaSaved = "INSERT INTO SaveComment (EvaluationTo, EvaluationFrom, SaveComment) VALUES ('$saveStuTo','$saveStuFrom', '$stuSavedComment')";
+        $queryEvaSaved = "INSERT INTO SaveComment (EvaluationTo, EvaluationFrom, SaveComment) VALUES ('". $saveStuTo ."','". $saveStuFrom ."', '". $stuSavedComment ."')";
         $connect->query($queryEvaSaved);
         $msg;
         
