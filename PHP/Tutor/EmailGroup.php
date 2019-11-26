@@ -1,6 +1,6 @@
 <?php
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php"; 
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php"; 
 
 if (isset($_POST['sendEmail'])) {
 
@@ -49,8 +49,6 @@ if (isset($_POST['showGroupEva'])) {
 	} else {
 		$msg = "<script>Swal.fire({type: 'error',title: 'Group\' Evaluation Incompelete',text: 'Group ". $studentGroup ." has Incompleted Evaluation',allowOutsideClick: false,confirmButtonText: 'Continue',})</script>";
 	}
-
-	
 }
 
 ?> 

@@ -1,7 +1,7 @@
 <?php
 
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
 $savedStuFrom = $_SESSION['UserIDLogin'];
 $savedStuTo   = $_SESSION['ToStudent'];

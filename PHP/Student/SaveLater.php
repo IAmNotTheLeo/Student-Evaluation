@@ -1,12 +1,12 @@
 <?php
 
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
 if (isset($_POST['stuSaveLater'])) {
     $saveStuFrom     = $_SESSION['UserIDLogin'];
     $saveStuTo       = $_SESSION['ToStudent'];
-    $stuSavedComment = mysqli_real_escape_string($_POST['StuComment']);
+    $stuSavedComment = mysqli_real_escape_string($connect, $_POST['StuComment']);
     
     $msg = "
         <script>

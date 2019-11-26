@@ -49,6 +49,7 @@
             <table id="example" class="display" cellspacing="0">
                <thead>
                   <tr>
+                     <td>Group</td>
                      <td>Evaluation From</td>
                      <td>Evaluation To</td>
                      <td>Grade</td>
@@ -58,7 +59,8 @@
                </thead>
                <?php 
                   while ($row = mysqli_fetch_array($result)){
-                    echo "<tr>";
+                  echo "<tr>";
+                  echo "<td>" . $row['GroupEva'] . "</td>";
                   echo "<td>" . $row['EvaluationFrom'] . "</td>";
                   echo "<td>" . $row['EvaluationTo'] . "</td>";
                   echo "<td>" . $row['Grade'] . "</td>";
@@ -68,7 +70,6 @@
                       } else {
                         echo '<td><img style="display:block;margin:auto;"" width="100" height="100" src="data:'.$row['ImageType'].';base64,'.base64_encode($row['StudentImage']).'"/></td>';
                     }
-                  echo "string";
                   echo "</tr>";
                     
                   }
