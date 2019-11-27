@@ -1,14 +1,14 @@
 <?php
 
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php";
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php";
 
 if (isset($_POST['stuUpload'])) {   
     $stuFromStudent = $_SESSION['UserIDLogin'];
     $stuToStudent   = $_SESSION['ToStudent'];
     $stuEvaGrade    = $_POST['StuGrade'];
     $stuEvaComment  = mysqli_real_escape_string($connect, $_POST['StuComment']);
-    $stuImageType   = $_FILES['uploadImage']['type'];
+    //$stuImageType   = $_FILES['uploadImage']['type'];
     $stuGroupEva    = $_SESSION['UserGroupNum'];
     
     $queryDeleteSave = "DELETE FROM SaveComment WHERE EvaluationFrom ='$stuFromStudent' AND EvaluationTo ='$stuToStudent'";

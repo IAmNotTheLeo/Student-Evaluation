@@ -3,14 +3,12 @@ function checkPassword() {
     var confirmPassword = form.stuConfirmPassword.value;
 
     if (password == confirmPassword) {
-        return true;
     } else {
         Swal.fire({
             type: 'error',
             title: 'Password Does Not Match',
             text: 'Please Try Again',
         })
-        return false;
     }
 }
 
@@ -25,9 +23,9 @@ function iDLimit() {
             title: 'ID Requires 9 Numbers',
             text: 'Please Try Again',
         })
-        return false;
+        
     } else {
-        return true;
+        
     }
 }
 
@@ -72,20 +70,14 @@ function checkCaptcha() {
     var input = form.stuCAPTCHA.value;
 
     if (input == captcha) {
-        return true;
+        
     } else {
         Swal.fire({
             type: 'error',
             title: 'CAPTCHA is Wrong',
             text: 'Please Try Again',
         })
-        return false;
     }
 }
 
 ///////////////////////////////////////////////////////
-
-
-function showHelp(){
-    
-}

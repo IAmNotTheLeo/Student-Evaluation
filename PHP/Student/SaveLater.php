@@ -1,12 +1,15 @@
 <?php
 
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php";
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php";
 
 if (isset($_POST['stuSaveLater'])) {
     $saveStuFrom     = $_SESSION['UserIDLogin'];
     $saveStuTo       = $_SESSION['ToStudent'];
     $stuSavedComment = mysqli_real_escape_string($connect, $_POST['StuComment']);
+    //$saveImage       = $_FILES['uploadImage']['type'];
+    $saveGrade       = $_POST['StuGrade'];
+
     
     $msg = "
         <script>
@@ -17,12 +20,12 @@ if (isset($_POST['stuSaveLater'])) {
     $resultCheck = $connect->query($queryCheck) or die("Fail");
     
     if ($resultCheck->num_rows === 0) {
-        $queryEvaSaved = "INSERT INTO SaveComment (EvaluationTo, EvaluationFrom, SaveComment) VALUES ('". $saveStuTo ."','". $saveStuFrom ."', '". $stuSavedComment ."')";
+        $queryEvaSaved = "INSERT INTO SaveComment (EvaluationTo, EvaluationFrom, SaveComment, SaveImage, SaveGrade) VALUES ('". $saveStuTo ."','". $saveStuFrom ."', '". $stuSavedComment ."', '". $saveImage ."', '". $saveGrade ."')";
         $connect->query($queryEvaSaved);
         $msg;
         
     } else {
-        $queryUpdateSavedEva = "UPDATE SaveComment SET SaveComment = '$stuSavedComment' WHERE EvaluationFrom ='$saveStuFrom' AND EvaluationTo ='$saveStuTo'";
+        $queryUpdateSavedEva = "UPDATE SaveComment SET SaveComment = '$stuSavedComment' AND SaveImage = '$saveImage' AND SaveGrade = '$saveGrade' WHERE EvaluationFrom ='$saveStuFrom' AND EvaluationTo ='$saveStuTo'";
         $connect->query($queryUpdateSavedEva);
         $msg;
     }

@@ -29,7 +29,7 @@
          <img id="Logo" src="../../Images/Logo.png">
       </div>
       <div id="contentRegister">
-         <form id="myForm" action="Register.php" method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit())" name="form">
+         <form id="myForm" action="Register.php" method="POST" onsubmit="return checkCaptcha() & checkPassword() & iDLimit()" name="form">
             <h2>Register</h2>
             <input value="<?php if (isset($_POST['stuID'])){ echo $_POST['stuID']; } else { echo ''; } ?>" title="Please Enter ID Number" id="firstInput" class="Input" placeholder="ID" type="text" name="stuID" maxlength="9" onkeypress="return onlyNumber(event)"  required>
             <br />
@@ -37,10 +37,10 @@
             <input value="<?php if (isset($_POST['stuEmail'])){ echo $_POST['stuEmail']; } else { echo ''; } ?>" title="Please Enter University Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="Input" placeholder="Email" type="email" name="stuEmail" required>
             <br/>
             <br/>
-            <input value="<?php if (isset($_POST['stuPassoword'])){ echo $_POST['stuPassoword']; } else { echo ''; } ?>" title="Please Enter Password" id="passwordID" class="Input" placeholder="Password" type="password" name="stuPassoword" required>
+            <input title="Please Enter Password" id="passwordID" class="Input" placeholder="Password" type="password" name="stuPassoword" required>
             <br />
             <br />
-            <input value="<?php if (isset($_POST['stuConfirmPassword'])){ echo $_POST['stuConfirmPassword']; } else { echo ''; } ?>" title="Please Confirm Password" id="confirmPassword" class="Input" placeholder="Re-Enter Password" type="password" name="stuConfirmPassword" required>
+            <input title="Please Confirm Password" id="confirmPassword" class="Input" placeholder="Re-Enter Password" type="password" name="stuConfirmPassword" required>
             <br />
             <br />
             <div id="generateCAPTCHA" unselectable="on"></div>
@@ -53,16 +53,16 @@
             <br />
             <select name="groupDropDown" style="width: 250px;" required>
                <option value="" hidden required selected>Choose Group</option>
-               <option value="1">Group 1</option>
-               <option value="2">Group 2</option>
-               <option value="3">Group 3</option>
-               <option value="4">Group 4</option>
-               <option value="5">Group 5</option>
-               <option value="6">Group 6</option>
-               <option value="7">Group 7</option>
-               <option value="8">Group 8</option>
-               <option value="9">Group 9</option>
-               <option value="10">Group 10</option>
+               <option value="1" <?php if ($_POST['groupDropDown'] == '1') echo 'selected="selected"'; ?>>Group 1</option>
+               <option value="2" <?php if ($_POST['groupDropDown'] == '2') echo 'selected="selected"'; ?>>Group 2</option>
+               <option value="3" <?php if ($_POST['groupDropDown'] == '3') echo 'selected="selected"'; ?>>Group 3</option>
+               <option value="4" <?php if ($_POST['groupDropDown'] == '4') echo 'selected="selected"'; ?>>Group 4</option>
+               <option value="5" <?php if ($_POST['groupDropDown'] == '5') echo 'selected="selected"'; ?>>Group 5</option>
+               <option value="6" <?php if ($_POST['groupDropDown'] == '6') echo 'selected="selected"'; ?>>Group 6</option>
+               <option value="7" <?php if ($_POST['groupDropDown'] == '7') echo 'selected="selected"'; ?>>Group 7</option>
+               <option value="8" <?php if ($_POST['groupDropDown'] == '8') echo 'selected="selected"'; ?>>Group 8</option>
+               <option value="9" <?php if ($_POST['groupDropDown'] == '9') echo 'selected="selected"'; ?>>Group 9</option>
+               <option value="10"<?php if ($_POST['groupDropDown'] == '10') echo 'selected="selected"'; ?>>Group 10</option>
             </select>
             <br />
             <br />
