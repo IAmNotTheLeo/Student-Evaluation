@@ -14,11 +14,10 @@
       <link rel="stylesheet" type="text/css" href="../../CSS/mycss.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">
+      <link rel="stylesheet" href="../../CSS/sweetalert2.min.css">
       <script src="../../JavaScript/navigation.js"></script>
       <script src="../../JavaScript/script.js"></script>
       <script src="../../JavaScript/sweetalert2.min.js"></script>
-      <link rel="stylesheet" href="../../CSS/sweetalert2.min.css">
-      <script></script>
    </head>
    <body>
       <div id="second-header">
@@ -36,7 +35,7 @@
          Student 
          <br />
          <font size="5" color="#3D3B41"><?php echo $_SESSION['UserIDLogin']; ?></font>
-         <h1>
+         <h1/>
          <h3><?php echo "Group " . $_SESSION['UserGroupNum']; ?></h3>
          Group Members
          <br />

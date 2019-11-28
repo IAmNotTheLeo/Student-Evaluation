@@ -9,13 +9,12 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <title>Tutor</title>
+      <title>View Students</title>
       <link rel="stylesheet" type="text/css" href="../../CSS/mycss.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">
       <script src="../../JavaScript/navigation.js"></script>
       <script src="../../JavaScript/script.js"></script>
-      <link rel="stylesheet" type="text/css" href="../../CSS/pagination.css">
    </head>
    <body>
       <div id="second-header">

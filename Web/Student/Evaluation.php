@@ -14,10 +14,10 @@
       <link rel="stylesheet" type="text/css" href="../../CSS/mycss.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">
+      <link rel="stylesheet" href="../../CSS/sweetalert2.min.css">
       <script src="../../JavaScript/navigation.js"></script>
       <script src="../../JavaScript/script.js"></script>
       <script src="../../JavaScript/sweetalert2.min.js"></script>
-      <link rel="stylesheet" href="../../CSS/sweetalert2.min.css">
    </head>
    <body>
       <div id="second-header">
