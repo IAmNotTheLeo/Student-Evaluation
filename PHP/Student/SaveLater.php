@@ -23,7 +23,7 @@ if (isset($_POST['stuSaveLater'])) {
         $msg;
         
     } else {
-        $queryUpdateSavedEva = "UPDATE SaveComment SET SaveComment = '$stuSavedComment' SaveGrade = '$saveGrade' WHERE EvaluationFrom ='$saveStuFrom' AND EvaluationTo ='$saveStuTo'";
+        $queryUpdateSavedEva = "UPDATE SaveComment SET SaveComment = '$stuSavedComment',SaveGrade = '$saveGrade' WHERE EvaluationFrom ='$saveStuFrom' AND EvaluationTo ='$saveStuTo'";
         $connect->query($queryUpdateSavedEva);
         $msg;
     }
