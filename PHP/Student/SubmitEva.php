@@ -10,13 +10,14 @@ if (isset($_POST['stuUpload'])) {
     $stuEvaComment  = mysqli_real_escape_string($connect, $_POST['StuComment']);
     $stuImageType   = $_FILES['uploadImage']['type'];
     $stuGroupEva    = $_SESSION['UserGroupNum'];
+    $stuUploadTime  = date('d/m/Y', time());
     
     $queryDeleteSave = "DELETE FROM SaveComment WHERE EvaluationFrom ='$stuFromStudent' AND EvaluationTo ='$stuToStudent'";
     
     $msg = "<script>Swal.fire({type: 'success',title: 'Evaluation Complete',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'RateStudent.php';}})</script>";
     
     if (!($_FILES['uploadImage']['type'])) {
-        $queryNoImage = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom, GroupEva) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuImageName', '$stuImageType', '$stuToStudent', '$stuFromStudent', '$stuGroupEva')";
+        $queryNoImage = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom, GroupEva, UploadTime) VALUES ('". $stuEvaGrade ."', '". $stuEvaComment ."', '". $stuImageName ."', '". $stuImageType ."', '". $stuToStudent ."', '". $stuFromStudent ."', '". $stuGroupEva ."', '". $stuUploadTime ."')";
         $connect->query($queryNoImage) or die("Fail");
         $connect->query($queryDeleteSave);
         $msg;
@@ -30,7 +31,7 @@ if (isset($_POST['stuUpload'])) {
         
     } else {
         $stuImageName   = addslashes(file_get_contents($_FILES['uploadImage']['tmp_name']));
-        $queryEva = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom, GroupEva) VALUES ('$stuEvaGrade', '$stuEvaComment', '$stuImageName', '$stuImageType', '$stuToStudent', '$stuFromStudent', '$stuGroupEva ')";
+        $queryEva = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom, GroupEva, UploadTime) VALUES ('". $stuEvaGrade ."', '". $stuEvaComment ."', '". $stuImageName ."', '". $stuImageType ."', '". $stuToStudent ."', '". $stuFromStudent ."', '". $stuGroupEva ."', '". $stuUploadTime ."')";
         $connect->query($queryEva) or die("Fail");
         $connect->query($queryDeleteSave);
         $msg;

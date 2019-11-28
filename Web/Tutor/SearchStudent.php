@@ -54,6 +54,7 @@
                      <td>Grade</td>
                      <td>Comment</td>
                      <td>Student Image</td>
+                     <td>Date Uploaded</td>
                   </tr>
                </thead>
                <?php 
@@ -69,6 +70,7 @@
                       } else {
                         echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='data:".$row['ImageType'].";base64,".base64_encode($row['StudentImage'])."'/></td>";
                     }
+                    echo "<td>". $row['UploadTime'] ."</td>";
                   echo "</tr>";
                     
                   }
