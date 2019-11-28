@@ -1,9 +1,8 @@
 <?php 
    session_start();
    require '../../PHP/Tutor/TutorSession.php';
-   require '../../PHP/Tutor/PaginationStudent.php';
-   
-   ?>
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
@@ -12,23 +11,11 @@
       <link rel="stylesheet" type="text/css" href="../../CSS/mycss.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">
+      <link rel="stylesheet" type="text/css" href="../../CSS/paginationStyle.css">
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
       <script src="../../JavaScript/navigation.js"></script>
       <script src="../../JavaScript/script.js"></script>
       <script src="../../JavaScript/jquery-3.4.1.min.js"></script>
-      <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
-      <script>
-         $(document).ready(function(){
-           $('#tableData').DataTable({
-             "iDisplayLength": 3,
-             "aLengthMenu": [[3, 4, 5, -1], [3 + " Per Page", 4 + " Per Page", 5 + " Per Page",  "All Evaluations"]],
-             "bInfo" : false,
-             "oLanguage": {
-             "sLengthMenu": "Show _MENU_",
-           }
-           });
-         });
-      </script>
    </head>
    <body>
       <div id="second-header">
@@ -44,37 +31,38 @@
       </div>
       <div id="contentSearch">
          <h3>Search</h3>
-         <div class="TableContainer" style="overflow: auto; height: 480px; border: 1px solid black; border-radius: 10px; padding: 25px;">
-            <table id="tableData" class="display" cellspacing="0">
-               <thead>
-                  <tr>
-                     <td>Group</td>
-                     <td>Evaluation From</td>
-                     <td>Evaluation To</td>
-                     <td>Grade</td>
-                     <td>Comment</td>
-                     <td>Student Image</td>
-                     <td>Date Uploaded</td>
-                  </tr>
-               </thead>
-               <?php 
-                  while ($row = mysqli_fetch_array($result)){
-                  echo "<tr>";
-                  echo "<td>" . $row['GroupEva'] . "</td>";
-                  echo "<td>" . $row['EvaluationFrom'] . "</td>";
-                  echo "<td>" . $row['EvaluationTo'] . "</td>";
-                  echo "<td>" . $row['Grade'] . "</td>";
-                      echo "<td><textarea readonly style='height:100px;resize: none;'> " . $row['EComment'] ." </textarea></td>";
-                    if (empty($row['StudentImage'])) {
-                      echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='../../Images/NoImage.png' /></td>";
-                      } else {
-                        echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='data:".$row['ImageType'].";base64,".base64_encode($row['StudentImage'])."'/></td>";
-                    }
-                    echo "<td>". $row['UploadTime'] ."</td>";
-                  echo "</tr>";
-                    
-                  }
-                  ?>
+         <?php require '../../PHP/Tutor/DisplayPagination.php'; ?>
+         <br/>
+         <div class="TableContainer" style="overflow: auto; height: 480px; border: 1px solid black; border-radius: 12px; padding: 10px;">
+            <table style="table-layout: auto;">
+              <tr>
+               <th>Group</th>
+               <th>Evaluation From</th>
+               <th>Evaluation To</th>
+               <th>Grade</th>
+               <th>Comment</th>
+               <th>Student Image</th>
+               <th>Time</th>
+             </tr>
+             <tr>
+               <?php
+               while ($row = $resultPage->fetch_array()) {
+                 echo "<td>". $row['GroupEva'] ."</td>";
+                 echo "<td>". $row['EvaluationFrom'] ."</td>";
+                 echo "<td>". $row['EvaluationTo'] ."</td>";
+                 echo "<td>". $row['Grade'] ."</td>";
+                 echo "<td><textarea readonly style='display:block;margin:auto;height:100px;outline:0;resize:none;'>". $row['EComment'] ."</textarea></td>";
+                 if (empty($row['StudentImage'])) {
+                    echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='../../Images/NoImage.png'></td>";
+                 } else {
+                    echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='data:". $row['ImageType'] .";base64,". base64_encode($row['StudentImage']) ."' /></td>";
+                 }
+                 echo "<td>". $row['UploadTime'] ."</td>"; 
+               
+
+             ?>
+           </tr>
+             <?php } ?>
             </table>
          </div>
          <br />
