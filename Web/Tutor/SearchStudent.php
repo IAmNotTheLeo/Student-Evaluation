@@ -19,7 +19,7 @@
       <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
       <script>
          $(document).ready(function(){
-           $('#example').DataTable({
+           $('#tableData').DataTable({
              "iDisplayLength": 3,
              "aLengthMenu": [[3, 4, 5, -1], [3 + " Per Page", 4 + " Per Page", 5 + " Per Page",  "All Evaluations"]],
              "bInfo" : false,
@@ -44,8 +44,8 @@
       </div>
       <div id="contentSearch">
          <h3>Search</h3>
-         <div style="overflow: auto; height: 480px; border: 1px solid black; border-radius: 10px; padding: 25px;">
-            <table id="example" class="display" cellspacing="0">
+         <div class="TableContainer" style="overflow: auto; height: 480px; border: 1px solid black; border-radius: 10px; padding: 25px;">
+            <table id="tableData" class="display" cellspacing="0">
                <thead>
                   <tr>
                      <td>Group</td>

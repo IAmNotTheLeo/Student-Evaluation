@@ -31,7 +31,7 @@
          <span id="navigationButton" onclick="openNav()">☰</span>
          <img id="Logo" src="../../Images/Logo.png">
       </div>
-      <div id="contentStudent">
+      <div id="contentStudentEva">
          <form method="POST" action="Evaluation.php" enctype="multipart/form-data">
             Evaluating: <b><?php echo $_SESSION['ToStudent']; ?></b>
             <br />
@@ -56,7 +56,7 @@
             Evaluation:
             <br />
             <br />
-            <textarea cols="30" rows="10" id="eva" name="StuComment" placeholder="Evaluation" required><?php echo $comment; ?><?php if (isset($_POST['StuComment'])){ echo $_POST['StuComment']; } else { echo ''; } ?></textarea>
+            <textarea cols="30" rows="10" id="eva" name="StuComment" placeholder="Evaluation" <?php if (isset($_POST['StuComment'])){ echo "style='color:white;'"; } ?> required><?php echo $comment; ?><?php if (isset($_POST['StuComment'])){ echo $_POST['StuComment']; } else { echo ''; } ?></textarea>
             <br/>
             <br />
             <input style="margin-left: 60px;" type="file" name="uploadImage" accept="image/*" />

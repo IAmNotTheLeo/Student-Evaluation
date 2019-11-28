@@ -74,6 +74,19 @@ html, body{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
 }
 
+#contentStudentEva{
+	border-radius: 10px;
+	padding-top: 25px;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-bottom: 60px;
+	margin-top: 35px;
+	background: #ffff;
+	border-color: #000000;
+ 	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
+}
+
 #contentTutor{
 	border-radius: 10px;
 	padding-top: 25px;
@@ -89,8 +102,8 @@ html, body{
 
 #contentTutorEva{
 	border-radius: 10px;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 40px;
+	padding-right: 40px;
 	padding-bottom: 30px;
 	margin-top: 40px;
 	background: #ffff;
@@ -113,8 +126,8 @@ html, body{
 
 #contentEmail{
 	border-radius: 10px;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 35px;
+	padding-right: 35px;
 	padding-bottom: 30px;
 	margin-top: 40px;
 	background: #ffff;
@@ -124,7 +137,7 @@ html, body{
 }
 
 #emailLayout{
-	width: 500px;
+	width: 450px;
 	height: 200px;
 	border: 1px solid #B0B0B0;
 	background-color: #FAFAFA;
@@ -139,7 +152,7 @@ html, body{
 
 #StudentEva {
 	overflow: auto;
-	width: 500px;
+	width: 450px;
 	height: 200px;
 	border: 1px solid #B0B0B0;
 	background-color: #FAFAFA;
@@ -223,4 +236,106 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+@media only screen and (max-width: 610px){
+	#contentLogin{
+		margin-top: 100px;
+		padding-top: 50px;
+		padding-left: 65px;
+		padding-right: 65px;
+		padding-bottom: 90px;
+		font-size: 20px;
+	}
+
+	#contentRegister{
+		margin-top: 100px;
+		padding-top: 25px;
+		padding-left: 85px;
+		padding-right: 85px;
+		padding-bottom: 50px;
+		font-size: 20px;
+
+	}
+
+	#contentStudent{
+		margin-top: 100px;
+		padding-top: 45px;
+		padding-left: 120px;
+		padding-right: 120px;
+		padding-bottom: 90px;
+		font-size: 20px;
+	}
+
+	#contentStudentEva{
+		margin-top: 85px;
+		padding-top: 45px;
+		padding-left: 65px;
+		padding-right: 65px;
+		padding-bottom: 60px;
+		font-size: 20px;
+	}
+
+	#contentTutor{
+		margin-top: 95px;
+		padding-top: 25px;
+		padding-left: 85px;
+		padding-right: 85px;
+		padding-bottom: 45px;
+		font-size: 20px;
+	}
+
+	#contentTutorEva{
+		margin-top: 90px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		font-size: 20px;
+	}
+
+	#StudentEva {
+		width: 400px;
+		padding-top: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 40px;
+	}
+
+	.Input{
+		font-size: 20px;
+	}
+	
+	.linkWeb{
+		font-size: 18px;
+	}
+
+	#contentSearch{
+		padding-left: 18px;
+		padding-right: 18px;
+		padding-bottom: 5px;
+		margin-top: 90px;
+		font-size: 20px;
+	}
+
+	.TableContainer{
+		width: 400px;
+	}
+
+	#contentEmail{
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 30px;
+		margin-top: 90px;
+		font-size: 20px;
+	}
+
+	#emailLayout{
+		width: 370px;
+		height: 200px;
+		padding-top: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 75px;
+	}
+
 }

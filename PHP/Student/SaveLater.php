@@ -1,7 +1,7 @@
 <?php
 
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php";
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php";
 
 if (isset($_POST['stuSaveLater'])) {
     $saveStuFrom     = $_SESSION['UserIDLogin'];
@@ -23,7 +23,7 @@ if (isset($_POST['stuSaveLater'])) {
         $msg;
         
     } else {
-        $queryUpdateSavedEva = "UPDATE SaveComment SET SaveComment = '$stuSavedComment',SaveGrade = '$saveGrade' WHERE EvaluationFrom ='$saveStuFrom' AND EvaluationTo ='$saveStuTo'";
+        $queryUpdateSavedEva = "UPDATE SaveComment SET SaveComment = '$stuSavedComment', SaveGrade = '$saveGrade' WHERE EvaluationFrom ='$saveStuFrom' AND EvaluationTo ='$saveStuTo'";
         $connect->query($queryUpdateSavedEva);
         $msg;
     }
