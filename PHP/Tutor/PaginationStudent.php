@@ -10,12 +10,12 @@ $inputSearch  = $_POST['SearchInput'];
 
 if (empty($inputSearch)) {
 		$_SESSION['Search'] = $search;
-		$_SESSION['InputSearch'] = $inputSearch;
+		$_SESSION['InputSearch'] = mysqli_real_escape_string($connect, $inputSearch);
 		header("Location: SearchStudent.php");
 	} 
 	else {
 		$_SESSION['Search'] = $search;
-		$_SESSION['InputSearch'] = $inputSearch;
+		$_SESSION['InputSearch'] = mysqli_real_escape_string($connect, $inputSearch);
 		header("Location: SearchStudent.php");
 	}
 }

@@ -37,6 +37,11 @@ session_start();
             </select>
             <br />
             <br />
+             <input type="radio" name="radioButton" value="1" checked> Default 
+             <input type="radio" id="" name="radioButton" value="2" >Order By High 
+             <input type="radio" name="radioButton" value="3"> Order By Low
+            <br />
+            <br />
             <button type="submit" class="buttonDesign" name="SearchNow">Search</button>
          </form>
    </body>

@@ -22,7 +22,7 @@
          <div id="nav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
-               <a href="GroupView.php">Groups</a>
+               <a href="Search.php">Search</a>
                <a href="Logout.php">Logout</a>
             </div>
          </div>
@@ -33,7 +33,7 @@
          <h3>Search</h3>
          <?php require '../../PHP/Tutor/DisplayPagination.php'; ?>
          <br/>
-         <div class="TableContainer" style="overflow: auto; height: 480px; border: 1px solid black; border-radius: 12px; padding: 10px;">
+         <div class="TableContainer" style="overflow: auto; height: 420px; border: 1px solid black; border-radius: 12px; padding: 10px;">
             <table style="table-layout: auto;">
               <tr>
                <th>Group</th>
@@ -58,7 +58,7 @@
                     echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='data:". $row['ImageType'] .";base64,". base64_encode($row['StudentImage']) ."' /></td>";
                  }
                  echo "<td>". $row['UploadTime'] ."</td>"; 
-               
+                
 
              ?>
            </tr>
