@@ -11,7 +11,9 @@ session_start();
       <link rel="stylesheet" type="text/css" href="../../CSS/mycss.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">
+      <link rel="stylesheet" href="../../CSS/sweetalert2.min.css"> 
       <script src="../../JavaScript/navigation.js"></script>
+      <script src="../../JavaScript/sweetalert2.min.js"></script>
       <script src="../../JavaScript/script.js"></script>
    </head>
    <body>
@@ -19,6 +21,7 @@ session_start();
          <div id="nav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
+               <a href="GroupView.php">Homepage</a>
                <a href="Logout.php">Logout</a>
             </div>
          </div>
@@ -37,11 +40,16 @@ session_start();
             </select>
             <br />
             <br />
-             <input type="radio" name="radioButton" value="1" checked> Default 
-             <input type="radio" id="" name="radioButton" value="2" >Order By High 
-             <input type="radio" name="radioButton" value="3"> Order By Low
+             <input type="radio" name="radioFilter" value="Default" checked> Default 
+             <input type="radio" name="radioFilter" value="High" >Order By High 
+             <input type="radio" name="radioFilter" value="Low"> Order By Low
             <br />
             <br />
+            <?php
+            if (isset($_POST['SearchNow'])) {
+               echo $msg;
+            }
+            ?>
             <button type="submit" class="buttonDesign" name="SearchNow">Search</button>
          </form>
    </body>

@@ -58,14 +58,13 @@
                     echo "<td><img style='display:block;margin:auto;' width='100' height='100' src='data:". $row['ImageType'] .";base64,". base64_encode($row['StudentImage']) ."' /></td>";
                  }
                  echo "<td>". $row['UploadTime'] ."</td>"; 
-                
-
              ?>
            </tr>
              <?php } ?>
             </table>
          </div>
          <br />
+         <button class="buttonDesign" onclick="window.location.href='Search.php';"> Return</button>
       </div>
    </body>
 </html>

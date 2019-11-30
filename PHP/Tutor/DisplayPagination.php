@@ -1,6 +1,6 @@
 <?php
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -8,13 +8,12 @@ error_reporting(E_ALL);
 
 $searchP = $_SESSION['Search'];
 $inputSearchP =  $_SESSION['InputSearch'];
-//$checkHigh =  $_SESSION['RBChecked'];
-//$checkLow = $_SESSION['LowCheck'];
+$checkRadio =  $_SESSION['OrderBySelect'];
+$checkLow = $_SESSION['OrderOption'];
 
 if (empty($inputSearchP)) {
 $perPage = 3;
-$queryPage = "SELECT * FROM Evaluation 
-$searchP";
+$queryPage = "SELECT * FROM Evaluation $checkRadio $searchP $checkLow";
 $resultPage = $connect->query($queryPage);
 $countRow = $resultPage->num_rows;
 $numberPages = ceil($countRow/$perPage);
@@ -24,7 +23,7 @@ if (!isset($_GET['pageNumber'])) {
   $getPage = $_GET['pageNumber'];
 }
 $firstPage = ($getPage - 1) * $perPage;
-$queryPage = "SELECT * FROM Evaluation $checkHigh  LIMIT $firstPage,$perPage";
+$queryPage = "SELECT * FROM Evaluation $checkRadio $searchP $checkLow LIMIT $firstPage,$perPage";
 $resultPage = mysqli_query($connect, $queryPage);
 for ($i = 1; $i <= $numberPages; $i++) { 
 	if ($getPage == $i) {
