@@ -29,7 +29,8 @@
       <div id="contentTutor">
          <h1>Tutor</h1>
          <form method="POST">
-            <select name="ViewGroupStudent" style="width: 250px;">
+            <select name="ViewGroupStudent" style="width: 250px;" required>
+               <option value="" disabled selected hidden>Choose Selected Group</option>
                <option value="1">Group 1</option>
                <option value="2">Group 2</option>
                <option value="3">Group 3</option>

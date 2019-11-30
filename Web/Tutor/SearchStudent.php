@@ -15,7 +15,6 @@
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
       <script src="../../JavaScript/navigation.js"></script>
       <script src="../../JavaScript/script.js"></script>
-      <script src="../../JavaScript/jquery-3.4.1.min.js"></script>
    </head>
    <body>
       <div id="second-header">
