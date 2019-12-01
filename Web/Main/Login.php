@@ -7,7 +7,7 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <title>Login</title>
+      <meta name="viewport" content="width=device-width, initial-scale=0.8">
       <link rel="stylesheet" type="text/css" href="../../CSS/mycss.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/buttonAnimation.css">

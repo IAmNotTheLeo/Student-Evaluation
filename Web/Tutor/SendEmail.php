@@ -8,6 +8,7 @@ require '../../PHP/Tutor/EmailGroup.php';
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=0.7"> 
       <title>Email</title>
       <link rel="stylesheet" type="text/css" href="../../CSS/mycss.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">

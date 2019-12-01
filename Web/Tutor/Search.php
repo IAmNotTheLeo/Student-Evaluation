@@ -7,6 +7,7 @@ session_start();
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=0.64"> 
       <title>Tutor</title>
       <link rel="stylesheet" type="text/css" href="../../CSS/mycss.css">
       <link rel="stylesheet" type="text/css" href="../../CSS/navigationLayout.css">
