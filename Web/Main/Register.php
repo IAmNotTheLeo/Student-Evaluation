@@ -16,6 +16,7 @@
       <script src="../../JavaScript/navigation.js"></script>
       <script src="../../JavaScript/script.js"></script>
       <script src="../../JavaScript/sweetalert2.min.js"></script>
+      <script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js" data-close-text="I Agree" data-font-size="15px" data-divlinkbg="#033657" data-divlink="white"></script>
    </head>
    <body onload="generateCaptcha()">
       <div id="second-header">
