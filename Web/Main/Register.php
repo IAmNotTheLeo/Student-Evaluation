@@ -32,7 +32,7 @@
       <div id="contentRegister">
          <form id="myForm" action="Register.php" method="POST" onsubmit="return checkCaptcha() & checkPassword() & iDLimit()" name="form">
             <h2>Register</h2>
-            <input value="<?php if (isset($_POST['stuID'])){ echo $_POST['stuID']; } else { echo ''; } ?>" title="Please Enter ID Number" id="firstInput" class="Input" placeholder="ID" type="text" name="stuID" maxlength="9" onkeypress="return onlyNumber(event)"  required>
+            <input value="<?php if (isset($_POST['stuID'])){ echo $_POST['stuID']; } else { echo ''; } ?>" title="Please Enter ID Number" id="firstInput" class="Input" placeholder="ID" type="text" name="stuID" maxlength="9" onkeypress="return onlyNumber(event)" onpaste="return false;" required>
             <br />
             <br />
             <input value="<?php if (isset($_POST['stuEmail'])){ echo $_POST['stuEmail']; } else { echo ''; } ?>" title="Please Enter University Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="Input" placeholder="Email" type="email" name="stuEmail" required>

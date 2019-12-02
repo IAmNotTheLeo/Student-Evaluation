@@ -33,7 +33,7 @@
          <h2>Login</h2>
          <form method="POST" action="Login.php">
             <br />
-            <input class="Input" type="text" placeholder="ID" maxlength="9" onkeypress="return onlyNumber(event)" name="IDLogin" value="<?php if (isset($_COOKIE['IDLogin'])) { echo $_COOKIE['IDLogin']; } if (isset($_POST['IDLogin'])){ echo $_POST['IDLogin']; } else { echo ''; }?>" required>
+            <input class="Input" type="text" placeholder="ID" maxlength="9" onkeypress="return onlyNumber(event)" name="IDLogin" value="<?php if (isset($_COOKIE['IDLogin'])) { echo $_COOKIE['IDLogin']; } if (isset($_POST['IDLogin'])){ echo $_POST['IDLogin']; } else { echo ''; }?>" onpaste="return false;" required>
             <br />
             <br />
             <input class="Input" type="password" placeholder="Password" name="PasswordLogin" required>
