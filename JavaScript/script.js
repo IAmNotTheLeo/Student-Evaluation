@@ -1,14 +1,18 @@
 function checkPassword() {
-    var password = form.stuPassoword.value;
-    var confirmPassword = form.stuConfirmPassword.value;
+    var password = document.getElementById('passwordID').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
 
     if (password == confirmPassword) {
+        return true;
     } else {
         Swal.fire({
             type: 'error',
             title: 'Password Does Not Match',
             text: 'Please Try Again',
-        })
+        });
+        document.getElementById('passwordID').value = "";
+        document.getElementById('confirmPassword').value = "";
+        return false;
     }
 }
 
@@ -17,15 +21,15 @@ function checkPassword() {
 function iDLimit() {
     var p = document.getElementById("firstInput").value;
     if (p.length !== 9) {
-
+        return false;
         Swal.fire({
             type: 'error',
             title: 'ID Requires 9 Numbers',
             text: 'Please Try Again',
         })
         
-    } else {
-        
+    } else {    
+        return true;
     }
 }
 
@@ -67,16 +71,18 @@ function generateCaptcha() {
 
 
 function checkCaptcha() {
-    var input = form.stuCAPTCHA.value;
+    var input = document.getElementById('answer').value;
 
     if (input == captcha) {
-        
+        return true;
     } else {
         Swal.fire({
             type: 'error',
             title: 'CAPTCHA is Wrong',
             text: 'Please Try Again',
         })
+        document.getElementById('answer').value = "";
+        return false;
     }
 }
 
