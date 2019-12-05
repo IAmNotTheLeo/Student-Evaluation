@@ -16,6 +16,8 @@ session_start();
       <script src="../../JavaScript/navigation.js"></script>
       <script src="../../JavaScript/sweetalert2.min.js"></script>
       <script src="../../JavaScript/script.js"></script>
+      <script src="../../JavaScript/jquery-3.4.1.min.js"></script>
+      <script src="../../JavaScript/disableRadioButtons.js"></script>
    </head>
    <body>
       <div id="second-header">
@@ -33,7 +35,7 @@ session_start();
          <h1>Search</h1>
          <form method="POST">
             <input type="text" name="SearchInput">
-            <select name="SelectOption">
+            <select name="SelectOption" id="selectedSearch">
                <option value="Grade">Grade</option>
                <option value="EvaluationAll">Evaluation (From & To)</option>
                <option value="EvaluationFrom">Evaluation From</option>
@@ -42,8 +44,8 @@ session_start();
             <br />
             <br />
              <input type="radio" name="radioFilter" value="Default" checked> Default 
-             <input type="radio" name="radioFilter" value="High" >Order By High 
-             <input type="radio" name="radioFilter" value="Low"> Order By Low
+             <input type="radio" name="radioFilter" class="disableRadio" value="High" >Order By High 
+             <input type="radio" name="radioFilter" class="disableRadio" value="Low"> Order By Low
             <br />
             <br />
             <?php

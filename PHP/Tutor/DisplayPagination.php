@@ -1,6 +1,6 @@
 <?php
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php";
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php";
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -37,7 +37,7 @@ for ($i = 1; $i <= $numberPages; $i++) {
     echo "</div>";
 	}
 }
-else{
+else {
 	if ($searchP == "EvaluationAll") {
 	$perPage = 3;
 	$queryPage = "SELECT * FROM Evaluation WHERE EvaluationTo = '$inputSearchP' OR EvaluationFrom = '$inputSearchP'";;
