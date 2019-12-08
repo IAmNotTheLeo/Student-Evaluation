@@ -30,12 +30,12 @@
          <img id="Logo" src="../../Images/Logo.png">
       </div>
       <div id="contentRegister">
-         <form method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit())">
+         <form method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit());">
             <h2>Register</h2>
             <input value="<?php if (isset($_POST['stuID'])){ echo $_POST['stuID']; } else { echo ''; } ?>" title="Please Enter ID Number" id="firstInput" class="Input" placeholder="ID" type="text" name="stuID" maxlength="9" onkeypress="return onlyNumber(event)" onpaste="return false;" required>
             <br />
             <br />
-            <input value="<?php if (isset($_POST['stuEmail'])){ echo $_POST['stuEmail']; } else { echo ''; } ?>" title="Please Enter University Email" pattern="[a-z0-9._%+-]+@gre.ac.uk" class="Input" placeholder="Email" type="email" name="stuEmail" required>
+            <input value="<?php if (isset($_POST['stuEmail'])){ echo $_POST['stuEmail']; } else { echo ''; } ?>" title="Please Enter University Email - example@gre.ac.uk" pattern="[a-z0-9._%+-]+@gre.ac.uk" class="Input" placeholder="Email" type="email" name="stuEmail" required>
             <br/>
             <br/>
             <input value="<?php if (isset($_POST['stuPassoword'])){ echo $_POST['stuPassoword']; } else { echo ''; } ?>" title="Please Enter Password" id="passwordID" class="Input" placeholder="Password" type="password" name="stuPassoword" required>

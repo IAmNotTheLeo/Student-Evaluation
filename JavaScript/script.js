@@ -20,14 +20,13 @@ function checkPassword() {
 
 function iDLimit() {
     var p = document.getElementById("firstInput").value;
-    if (p.length !== 9) {
-        return false;
+    if (p.length != 9) {
         Swal.fire({
             type: 'error',
             title: 'ID Requires 9 Numbers',
             text: 'Please Try Again',
         })
-        
+        return false;
     } else {    
         return true;
     }
@@ -37,7 +36,7 @@ function iDLimit() {
 
 function showPassword() {
     var x = document.getElementById("passwordID");
-    if (x.type === "password") {
+    if (x.type == "password") {
         x.type = "text";
     } else {
         x.type = "password";

@@ -54,15 +54,6 @@ require '../../PHP/Tutor/EmailGroup.php';
          <br />
          <br />
       </form>
-      <form method="POST">
-         <?php
-         if (isset($_POST['showGroupEva'])) {
-            echo $msg;
-         }
-         ?>
-      <button class="buttonDesign" name="showGroupEva" title="Check Group">Group Evaluation</button>
-      </form>
    </div>
-
    </body>
 </html>

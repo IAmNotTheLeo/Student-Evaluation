@@ -13,6 +13,7 @@ if (isset($_POST['stuUpload'])) {
     $stuUploadTime  = date('d/m/Y', time());
     
     $queryDeleteSave = "DELETE FROM SaveComment WHERE EvaluationFrom ='$stuFromStudent' AND EvaluationTo ='$stuToStudent'";
+
     
     $msg = "<script>Swal.fire({type: 'success',title: 'Evaluation Complete',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'RateStudent.php';}})</script>";
     
@@ -21,6 +22,21 @@ if (isset($_POST['stuUpload'])) {
         $connect->query($queryNoImage) or die("Fail");
         $connect->query($queryDeleteSave);
         $msg;
+
+        $queryAvg = "SELECT EvaluationTo,Grade FROM Evaluation WHERE EvaluationTo = '$stuToStudent'";
+        $resultAvg = $connect->query($queryAvg) or die("Fail");
+
+        $queryGroup = "SELECT UserID,UserGroup FROM UserTable WHERE NOT UserID = '$stuFromStudent' AND UserGroup = '$stuGroupEva'";
+        $resultGroup = $connect->query($queryGroup) or die("Fail");
+        $count = $resultGroup->num_rows;
+
+        while ($row = $resultAvg->fetch_array()){
+        $add = $row['Grade'];
+        $total += $add;
+        $avg = $total/$count;
+        } 
+        $queryAvgOverall = "UPDATE UserTable SET OverallGrade = '$avg' WHERE UserID ='$stuToStudent'";
+        $connect->query($queryAvgOverall);
     }
 
     else if (!preg_match('/gif|png|x-png|jpeg|jpg|/', $_FILES['uploadImage']['type'])) {

@@ -44,7 +44,6 @@
          <br />
          <?php echo "<b>From:</b> ". $student ." <br /><br />" ?>
          <?php echo "<b>Average Grade </b>- " . $avg . "/10"; ?>
-
          <br />
          <br />
          <div id="StudentEva">
