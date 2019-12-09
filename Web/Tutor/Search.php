@@ -1,6 +1,8 @@
 <?php
 session_start();
- require '../../PHP/Tutor/PaginationStudent.php';
+require '../../PHP/Tutor/PaginationStudent.php';
+require '../../PHP/Tutor/TutorSession.php';
+
 
 ?>
 <!DOCTYPE html>
@@ -34,7 +36,7 @@ session_start();
       <div id="contentTutor">
          <h1>Search</h1>
          <form method="POST">
-            <input type="text" name="SearchInput">
+            <input type="text" name="SearchInput" maxlength="9">
             <select name="SelectOption" id="selectedSearch">
                <option value="Grade">Grade</option>
                <option value="EvaluationAll">Evaluation (From & To)</option>

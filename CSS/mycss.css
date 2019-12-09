@@ -136,6 +136,19 @@ html, body{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
 }
 
+#contentIndividual{
+	margin-top: 15%;
+	border-radius: 10px;
+	padding-top: 25px;
+	padding-left: 75px;
+	padding-right: 75px;
+	padding-bottom: 40px;
+	background: #FFFF;
+	border-color: #000000;
+ 	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.48), 0 6px 20px 0 rgba(41, 41, 41, 0.28);
+}
+
 #emailLayout{
 	width: 450px;
 	height: 200px;

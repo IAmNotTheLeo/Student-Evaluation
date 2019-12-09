@@ -1,10 +1,6 @@
 <?php
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
 $searchP = $_SESSION['Search'];
 $inputSearchP =  $_SESSION['InputSearch'];
@@ -66,7 +62,7 @@ else {
 	}
 	else {
 	$perPage = 3;
-	$queryPage = "SELECT * FROM Evaluation WHERE $searchP = '$inputSearchP'";;
+	$queryPage = "SELECT * FROM Evaluation WHERE $searchP = '$inputSearchP'";
 	$resultPage = $connect->query($queryPage);
 	$countRow = $resultPage->num_rows;
 	$numberPages = ceil($countRow/$perPage);

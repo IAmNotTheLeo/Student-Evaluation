@@ -52,7 +52,10 @@
          <button class="buttonDesign" type="submit" name="tuSendEmail">Email Group</button>
          </form>
          <br />
-         <button class="buttonDesign" type="button" onclick="window.location.href='Search.php'" name="tuSearchView">Search Student</button>
+         <button class="buttonDesign" type="button" onclick="window.location.href='SearchIDorGrade.php'" name="tuSearchView">Search ID or Grade</button>
+         <br />
+         <br />
+         <button class="buttonDesign" type="button" onclick="window.location.href='Search.php'" name="tuSearchView">Alt Search</button>
       </div>
    </body>
 </html>

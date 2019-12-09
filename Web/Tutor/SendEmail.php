@@ -2,6 +2,7 @@
 session_start();
 require '../../PHP/Tutor/StudentsViewEmail.php';
 require '../../PHP/Tutor/EmailGroup.php';
+require '../../PHP/Tutor/TutorSession.php';
 
 ?>
 <!DOCTYPE html>
@@ -50,7 +51,7 @@ require '../../PHP/Tutor/EmailGroup.php';
             echo $msg;
          }
          ?>
-         <button class="buttonDesign" type="submit" name="sendEmail">Send Email</button>
+         <button class="buttonDesign" <?php echo $disable; ?> type="submit" name="sendEmail">Send Email</button>
          <br />
          <br />
       </form>

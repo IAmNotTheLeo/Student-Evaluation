@@ -1,7 +1,7 @@
 <?php
 
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
 if (isset($_POST['stuUpload'])) {   
     $stuFromStudent = $_SESSION['UserIDLogin'];
@@ -14,10 +14,16 @@ if (isset($_POST['stuUpload'])) {
     
     $queryDeleteSave = "DELETE FROM SaveComment WHERE EvaluationFrom ='$stuFromStudent' AND EvaluationTo ='$stuToStudent'";
 
+    $queryDoneEva  = "SELECT * FROM Evaluation WHERE EvaluationTo = '$stuToStudent' AND EvaluationFrom = '$stuFromStudent'";
+    $resultDoneEva = $connect->query($queryDoneEva) or die("Fail");
     
+
     $msg = "<script>Swal.fire({type: 'success',title: 'Evaluation Complete',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'RateStudent.php';}})</script>";
     
     if (!($_FILES['uploadImage']['type'])) {
+        if ($resultDoneEva->num_rows === 1) {
+        $msg = "<script>Swal.fire({type: 'error',title: 'Already Evaluated Student',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'RateStudent.php';}})</script>";
+        } else {
         $queryNoImage = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom, GroupEva, UploadTime) VALUES ('". $stuEvaGrade ."', '". $stuEvaComment ."', '". $stuImageName ."', '". $stuImageType ."', '". $stuToStudent ."', '". $stuFromStudent ."', '". $stuGroupEva ."', '". $stuUploadTime ."')";
         $connect->query($queryNoImage) or die("Fail");
         $connect->query($queryDeleteSave);
@@ -38,6 +44,7 @@ if (isset($_POST['stuUpload'])) {
         $queryAvgOverall = "UPDATE UserTable SET OverallGrade = '$avg' WHERE UserID ='$stuToStudent'";
         $connect->query($queryAvgOverall);
     }
+    }
 
     else if (!preg_match('/gif|png|x-png|jpeg|jpg|/', $_FILES['uploadImage']['type'])) {
         $msg = "<script>Swal.fire({type: 'error',title: 'Incompatible Image',text: 'Please Select A Compatible Image',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
@@ -46,11 +53,16 @@ if (isset($_POST['stuUpload'])) {
         $msg = "<script>Swal.fire({type: 'error',title: 'File Too Large',text: 'Please Select A Reasonable File Size',allowOutsideClick: false,confirmButtonText: 'OK'})</script>";
         
     } else {
+
+        if ($resultDoneEva->num_rows === 1) {
+        $msg = "<script>Swal.fire({type: 'error',title: 'Already Evaluated Student',allowOutsideClick: false,confirmButtonText: 'OK',}).then((result) => {if (result.value) {location.href = 'RateStudent.php';}})</script>";
+        } else {
         $stuImageName   = addslashes(file_get_contents($_FILES['uploadImage']['tmp_name']));
         $queryEva = "INSERT INTO Evaluation (Grade, EComment, StudentImage, ImageType, EvaluationTo, EvaluationFrom, GroupEva, UploadTime) VALUES ('". $stuEvaGrade ."', '". $stuEvaComment ."', '". $stuImageName ."', '". $stuImageType ."', '". $stuToStudent ."', '". $stuFromStudent ."', '". $stuGroupEva ."', '". $stuUploadTime ."')";
         $connect->query($queryEva) or die("Fail");
         $connect->query($queryDeleteSave);
         $msg;
+    }
     }
     
 }

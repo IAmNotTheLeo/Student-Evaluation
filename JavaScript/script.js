@@ -57,7 +57,7 @@ function onlyNumber(press) {
 ///////////////////////////////////////////////////////
 
 var captcha = '';
-var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function generateCaptcha() {
     var length = 5;
