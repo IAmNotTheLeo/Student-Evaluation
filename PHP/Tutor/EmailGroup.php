@@ -1,6 +1,6 @@
 <?php
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php"; 
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php"; 
 
 if (isset($_POST['sendEmail'])) {
 
@@ -18,7 +18,6 @@ if (isset($_POST['sendEmail'])) {
 		if ($resultEmailGroup->num_rows != 3) {
 			$msg = "<script>Swal.fire({type: 'error',title: 'Group Not Full',text: 'To Send Email, Group ". $studentGroup ." needs 3 Members in Total',allowOutsideClick: false,confirmButtonText: 'Try Again'})</script>";
 		} else {
-		$disable = "onclick='this.disabled = true'";
 		while ($row = $resultEmailGroup->fetch_array()){
 			$to = $row['UserEmail'];
 			$subject = $_POST['subjectEmail'];
@@ -33,7 +32,6 @@ if (isset($_POST['sendEmail'])) {
 	if ($resultGroupGrade->num_rows != 6) {
 		$msg = "<script>Swal.fire({type: 'error',title: 'Group\' Evaluation Incompelete',text: 'Group ". $studentGroup ." has Incompleted Evaluation',allowOutsideClick: false,confirmButtonText: 'Continue',})</script>";
 	} else {
-		$disable = "onclick='this.disabled = true'";
 		while ($row = $resultGroupGrade->fetch_array()){
 		$add = $row['Grade'];
 		$total += $add;

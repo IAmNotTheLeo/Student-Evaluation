@@ -1,7 +1,6 @@
 <?php
-
-//require '/home/lc8884l/include/connection.php';
-require "../../PHP/connection.php";
+require '/home/lc8884l/include/connection.php';
+//require "../../PHP/connection.php";
 
 $idStudent = $_SESSION['IDstu'];
 
