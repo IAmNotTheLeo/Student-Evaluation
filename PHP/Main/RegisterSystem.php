@@ -19,7 +19,6 @@ if (isset($_POST['regSubmit'])) {
     $queryLimit  = "SELECT * FROM UserTable WHERE UserGroup = " . $studentGroup . "";
     $resultLimit = $connect->query($queryLimit) or die("Fail");
     
-    
     if ($resultExist->num_rows > 0) {
         $msg = "<script>Swal.fire({type: 'error',title: 'Student ID or Email Already Exists',text: 'Please Enter An Nonexistent Account',allowOutsideClick: false,confirmButtonText: 'Try Again'})</script>";
     }

@@ -30,12 +30,12 @@
          <img id="Logo" src="../../Images/Logo.png">
       </div>
       <div id="contentRegister">
-         <form method="POST" onsubmit="return !!(checkCaptcha() & checkPassword() & iDLimit());">
+         <form method="POST" onsubmit="return validateForm()">
             <h2>Register</h2>
             <input value="<?php if (isset($_POST['stuID'])){ echo $_POST['stuID']; } else { echo ''; } ?>" title="Please Enter ID Number" id="firstInput" class="Input" placeholder="ID" type="text" name="stuID" maxlength="9" onkeypress="return onlyNumber(event)" onpaste="return false;" required>
             <br />
             <br />
-            <input value="<?php if (isset($_POST['stuEmail'])){ echo $_POST['stuEmail']; } else { echo ''; } ?>" title="Please Enter University Email - example@gre.ac.uk" pattern="[a-z0-9._%+-]+@gre.ac.uk" class="Input" placeholder="Email" type="email" name="stuEmail" required>
+            <input value="<?php if (isset($_POST['stuEmail'])){ echo $_POST['stuEmail']; } else { echo ''; } ?>" title="Please Enter University Email - example@gre.ac.uk" id="secondInput" class="Input" placeholder="Email" type="email" name="stuEmail" required>
             <br/>
             <br/>
             <input value="<?php if (isset($_POST['stuPassoword'])){ echo $_POST['stuPassoword']; } else { echo ''; } ?>" title="Please Enter Password" id="passwordID" class="Input" placeholder="Password" type="password" name="stuPassoword" required>
@@ -52,8 +52,7 @@
             <input type="checkbox" onclick="showPassword();"> Show Password
             <br />
             <br />
-            <select name="groupDropDown" style="width: 250px;" required>
-               <option value="" hidden required selected>Choose Group</option>
+            <select name="groupDropDown" style="width: 250px;">
                <option value="1" <?php if ($_POST['groupDropDown'] == '1') echo 'selected="selected"'; ?>>Group 1</option>
                <option value="2" <?php if ($_POST['groupDropDown'] == '2') echo 'selected="selected"'; ?>>Group 2</option>
                <option value="3" <?php if ($_POST['groupDropDown'] == '3') echo 'selected="selected"'; ?>>Group 3</option>
