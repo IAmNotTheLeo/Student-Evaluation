@@ -4,7 +4,7 @@
    require '../../PHP/Student/StudentSession.php';
    require '../../PHP/Student/SaveLater.php';
    require '../../PHP/Student/ShowSavedData.php';
-   require '../../PHP/Student/DeleteSavedEva.php';
+   
    ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -57,24 +57,21 @@
             Evaluation:
             <br />
             <br />
-            <textarea cols="30" rows="10" id="eva" name="StuComment" placeholder="Evaluation" <?php if (isset($_POST['stuSaveLater']) || isset($_POST['stuDelete'])){ echo "style='color:white;'"; } ?> required><?php echo $comment; ?><?php if (isset($_POST['StuComment'])){ echo $_POST['StuComment']; } else { echo ''; } ?></textarea>
+            <textarea cols="30" rows="10" id="eva" name="StuComment" placeholder="Evaluation" <?php if (isset($_POST['stuSaveLater'])){ echo "style='color:white;'"; } ?> required><?php echo $comment; ?><?php if (isset($_POST['StuComment'])){ echo $_POST['StuComment']; } else { echo ''; } ?></textarea>
             <br/>
             <br />
             <input style="margin-left: 60px;" type="file" name="uploadImage" accept="image/*" />
             <br />
             <?php 
-               if (isset($_POST['stuUpload']) || isset($_POST['stuSaveLater']) || isset($_POST['stuDelete'])) {
+               if (isset($_POST['stuUpload']) || isset($_POST['stuSaveLater'])) {
                  echo $msg;
                }
                ?>
             <br />
-            <button class="buttonDelete" type="submit" name="stuDelete">Delete Saved</button>
-            <br />
-            <br />
             <button class="buttonSaveLater" type="submit" name="stuSaveLater">Save for Later</button>
             <br />
             <br />
-            <button class="buttonDesign" style="font-size: 11px; padding: 6px;" type="submit" name="stuUpload">Finalise</button>
+            <button class="buttonUpload" type="submit" name="stuUpload">Submit</button>
          </form>
       </div>
    </body>

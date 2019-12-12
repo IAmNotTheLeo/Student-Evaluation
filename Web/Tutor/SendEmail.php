@@ -3,7 +3,7 @@ session_start();
 require '../../PHP/Tutor/StudentsViewEmail.php';
 require '../../PHP/Tutor/EmailGroup.php';
 require '../../PHP/Tutor/TutorSession.php';
-echo $dis;
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -18,7 +18,6 @@ echo $dis;
       <script src="../../JavaScript/navigation.js"></script>
       <script src="../../JavaScript/sweetalert2.min.js"></script>
       <script src="../../JavaScript/script.js"></script>
-      <script src="../../JavaScript/jquery-3.4.1.min.js"></script>
    </head>
    <body>
       <div id="second-header">
@@ -50,15 +49,9 @@ echo $dis;
          <?php
          if (isset($_POST['sendEmail'])) {
             echo $msg;
-            echo "<script>$(document).ready(function(){
-               $('#disableButton').click(function(){
-                $('#disableButton').hide();
-               });
-                  });
-                  </script>";
          }
          ?>
-         <button id="disableButton" class="buttonDesign" type="submit" name="sendEmail">Send Email</button>
+         <button class="buttonDesign" <?php echo $disable; ?> type="submit" name="sendEmail">Send Email</button>
          <br />
          <br />
       </form>
