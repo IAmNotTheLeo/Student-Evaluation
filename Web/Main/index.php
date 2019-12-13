@@ -9,8 +9,10 @@
    </head>
    <body>
       <div id="contentLogin">
-         <a>Login</a>
-         <a>Register</a>
+         <h1>Main</h1>
+         <a href="Login.php">Login</a>
+         <br />
+         <a href="Register.php">Register</a>
       </div>
    </body>
 </html>
