@@ -1,6 +1,6 @@
 <?php
-require '/home/lc8884l/include/connection.php';
-//require "../../PHP/connection.php";
+//require '/home/lc8884l/include/connection.php';
+require "../../PHP/connection.php";
 
 $searchP = $_SESSION['Search'];
 $inputSearchP =  $_SESSION['InputSearch'];

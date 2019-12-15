@@ -18,6 +18,7 @@ require '../../PHP/Tutor/TutorSession.php';
       <script src="../../JavaScript/navigation.js"></script>
       <script src="../../JavaScript/sweetalert2.min.js"></script>
       <script src="../../JavaScript/script.js"></script>
+      <script src="../../JavaScript/jquery-3.4.1.min.js"></script>
    </head>
    <body>
       <div id="second-header">
@@ -49,9 +50,16 @@ require '../../PHP/Tutor/TutorSession.php';
          <?php
          if (isset($_POST['sendEmail'])) {
             echo $msg;
+            echo "<script>
+            $(document).ready(function(){
+               $('#disableButton').click(function(){
+                $('#disableButton').hide();
+               });
+                  });
+                  </script>";  
          }
          ?>
-         <button class="buttonDesign" <?php echo $disable; ?> type="submit" name="sendEmail">Send Email</button>
+         <button id="disableButton" class="buttonDesign" type="submit" name="sendEmail">Send Email</button>
          <br />
          <br />
       </form>
